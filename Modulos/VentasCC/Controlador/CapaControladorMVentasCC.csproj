@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ADEFD94-64D4-4436-83BE-E991D8AE244B}</ProjectGuid>
+    <ProjectGuid>{56C1BBFB-AF21-405F-AA36-3F3B3DC75082}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CapaControladorMVentasCC</RootNamespace>
