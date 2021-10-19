@@ -146,5 +146,10 @@ namespace Navegador
             navegador1.funTextBoxDPTVista(dtProducto, txtFecha);
             navegador1.funDPTextBoxVista(dtProducto, txtFecha);
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
