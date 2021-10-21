@@ -237,7 +237,7 @@ CREATE TABLE marca (
    nombre varchar(100) DEFAULT NULL,
    descripcion varchar(500) DEFAULT NULL,
    id_proveedor int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE proveedores (
    id_proveedor int NOT NULL,
@@ -245,20 +245,20 @@ CREATE TABLE proveedores (
    direccion varchar(500) DEFAULT NULL,
    telefono int DEFAULT NULL,
    email varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE registro_compra (
    id_registro int NOT NULL,
    id_factura_header int DEFAULT NULL,
    Monto float DEFAULT NULL,
    fecha date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE registro_consultas (
    id_registro int NOT NULL,
    nombre varchar(200) DEFAULT NULL,
    consulta varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 
 -- INSERT CONSULTAS INTELIGENTES
@@ -398,3 +398,67 @@ ALTER TABLE `marca`
 --
 ALTER TABLE `registro_compra`
   ADD CONSTRAINT `registro_compra_ibfk_1` FOREIGN KEY (`id_factura_header`) REFERENCES `factura_header` (`id_factura_header`);
+  
+-- ------------------------------------------------------------------------------------------------------------
+-- 												POLIZAS
+-- ------------------------------------------------------------------------------------------------------------
+
+create table tipoCuenta(
+idTipoCuenta varchar(15), -- si es activo o pasivo
+nombre varchar(65), -- escribir nombre completo ej Activo Corriente
+estado int,
+
+primary key (idTipoCuenta)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table cuenta(
+idCuenta varchar(15),
+nombre varchar(65),
+idTipoCuenta varchar(15), -- foranea con Tipo Cuenta
+estado int ,
+
+primary key (idCuenta),
+foreign key (idTipoCuenta) references tipoCuenta (idTipoCuenta)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table tipoPoliza(
+idTipoPoliza varchar(15),
+nombre varchar(65),
+descripcion varchar(65),
+estado varchar(65), -- 0-inactivo , 1-Activo 
+
+primary key (idTipoPoliza)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table polizaEncabezado(
+idEncabezado varchar(15),
+fechaPartida date,
+idTipoPoliza varchar(15), -- foranea con tipo poliza
+concepto varchar(65),
+
+primary key(idEncabezado,fechaPartida),
+foreign key (idTipoPoliza) references tipoPoliza (idTipoPoliza)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table tipoOperacion(
+idTipoOperacion varchar(15),
+nombre varchar(65),
+estado varchar(1),
+
+primary key (idTipoOperacion)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table polizaDetalle(
+idPolizaDetalle varchar (15),
+idEncabezado varchar(15), -- foranea con Encabezado
+idCuenta varchar(15), -- foranea con cuenta
+saldo float,
+idTipoOperacion varchar(15), -- debe/haber
+
+
+fechaPartida date, -- foranea con partida
+primary key(idPolizaDetalle),
+foreign key (idCuenta) references Cuenta (idCuenta),
+foreign key (idTipoOperacion) references tipoOperacion (idTipoOperacion),
+foreign key (idEncabezado) references polizaEncabezado (idEncabezado)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
