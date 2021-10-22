@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Data.Odbc;
-
+//Jorge González 0901-18-3920
 namespace CapaModeloSeguridadHSC
 {
     public class OtorgarPermisos
     {
         Conexion cn = new Conexion();
+        //Jorge González 0901-18-3920
         //Funcion para obtener el codigo del usuario
         public string funcObtenerCodigoUsuario(string usuarioLogin)
         {
@@ -24,7 +25,7 @@ namespace CapaModeloSeguridadHSC
             }
             return strCodigo;
         }
-
+        //Jorge González 0901-18-3920
         //funcion para obtener los permisos por aplicacion del usuario.
         public string funcPermisosPorAplicacion(string strUsuario)
         {

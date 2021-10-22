@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using static datosUsuario;
-
+//Forma realizada por Ivania Gatica 0901-18-19528
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmMantenimientoPerfil : Form
@@ -40,13 +40,13 @@ namespace CapaVistaSeguridadHSC
         }
 
         private string tabla = "perfil";
-
+        //Ivania Gatica 0901-18-19528
         public void actualizardatagriew()
         {
             DataTable dt = cn.llenarTbl(tabla);
             perfilTabla.DataSource = dt;
         }
-
+        //Ivania Gatica 0901-18-19528
         public void funLimpiar()
         {
             textBox1.Text = "";
@@ -55,17 +55,17 @@ namespace CapaVistaSeguridadHSC
             btnInhabilitado.Checked = false;
             textBox3.Text = "";
         }
-
+        //Luis de la Cruz 0901-18-17144
         private void btnHabilitado_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.Text = "1";
+            textBox3.Text = "A";
         }
 
         private void btnInhabilitado_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.Text = "0";
+            textBox3.Text = "I";
         }
-
+        //Ivania Gatica 0901-18-19528
         private void frmMantenimientoPerfil_Load(object sender, EventArgs e)
         {
             try
@@ -85,16 +85,18 @@ namespace CapaVistaSeguridadHSC
         private void perfilTabla_RowHeaderMouseClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-
+        //Luis de la Cruz 0901-18-17144
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
             {
+                //Jorge González 0901-18-3920
                 Bitacora loggear = new Bitacora();
                 loggear.guardarEnBitacora(IdUsuario, "1", "0012", "Insertar");
 
                 if (textBox1.Text.Trim() != "" && textBox2.Text.Trim() != "")
                 {
+                    //Jorge González 0901-18-3920
                     loggear.guardarEnBitacora(IdUsuario, "1", "0004", "Inserción realizada");
                     cn.insertarPerfil(textBox1.Text, textBox2.Text, int.Parse(textBox3.Text));
                     MessageBox.Show("Insercion realizada");
@@ -112,11 +114,12 @@ namespace CapaVistaSeguridadHSC
             }
             actualizardatagriew();
         }
-
+        //Ivania Gatica 0901-18-19528
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Trim() != "" && textBox2.Text.Trim() != "")
             {
+                //Jorge González 0901-18-3920
                 Bitacora loggear = new Bitacora();
                 loggear.guardarEnBitacora(IdUsuario, "1", "0004", "Modificación Exitosa");
                 cn.modificarPerfil(textBox1.Text, textBox2.Text, int.Parse(textBox3.Text));
@@ -125,6 +128,7 @@ namespace CapaVistaSeguridadHSC
             }
             else
             {
+                //Jorge González 0901-18-3920
                 Bitacora loggear = new Bitacora();
                 loggear.guardarEnBitacora(IdUsuario, "1", "0004", "Error al modificar");
                 MessageBox.Show("Error debe de ingresar todos los valores solicitados ");
@@ -134,6 +138,7 @@ namespace CapaVistaSeguridadHSC
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //Jorge González 0901-18-3920
             Bitacora loggear = new Bitacora();
             loggear.guardarEnBitacora(IdUsuario, "1", "0004", "Eliminar");
             cn.eliminarPerfil(textBox1.Text);
@@ -141,12 +146,12 @@ namespace CapaVistaSeguridadHSC
             funLimpiar();
             actualizardatagriew();
         }
-
+        //Ivania Gatica 0901-18-19528
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             funLimpiar();
         }
-
+        //Ivania Gatica 0901-18-19528
         public void actualizarTablaDeporte()
         {
             try
@@ -158,7 +163,7 @@ namespace CapaVistaSeguridadHSC
                 Console.WriteLine("404 ", Error);
             }
         }
-
+        //Luis de la Cruz 0901-18-17144
         private void perfilTabla_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -167,11 +172,11 @@ namespace CapaVistaSeguridadHSC
                 textBox2.Text = perfilTabla.CurrentRow.Cells[1].Value.ToString();
                 textBox3.Text = perfilTabla.CurrentRow.Cells[2].Value.ToString();
 
-                if (textBox3.Text == "1")
+                if (textBox3.Text == "A")
                 {
                     btnHabilitado.Checked = true;
                 }
-                else if (textBox3.Text == "0")
+                else if (textBox3.Text == "I")
                 {
                     btnInhabilitado.Checked = true;
                 }
@@ -180,7 +185,7 @@ namespace CapaVistaSeguridadHSC
             {
             }
         }
-
+        //Luis de la Cruz 0901-18-17144
         public void obtenerpermisos(string id, string p, string permiso, string t2, string pk, string app)
         {
             b.bloqueo(id, p, permiso, t2, pk, app);

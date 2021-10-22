@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Odbc;
 using System.Windows.Forms;
 
-
+//Luis de la Cruz 0901-18-17144
 namespace CapaModeloSeguridadHSC
 {
     public class llamarPermisos
@@ -15,7 +15,7 @@ namespace CapaModeloSeguridadHSC
 
 
         public string consulta1 = "";
-
+        //Luis de la Cruz 0901-18-17144
         public void obteneraplicacion(string nombreapp, string idapp)
         {
             string Query = "SELECT pkid from aplicacion WHERE nombre='" + nombreapp + "';";
@@ -35,7 +35,7 @@ namespace CapaModeloSeguridadHSC
         }
 
 
-
+        //Luis de la Cruz 0901-18-17144
 
         public string llenarpermisos(string id, string p, string permiso, string tabla, string pk, string app)
         {

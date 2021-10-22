@@ -1,7 +1,7 @@
 ﻿using CapaModeloSeguridadHSC;
 
 namespace CapaControladorSeguridadHSC
-{ 
+{   //Jorge González 0901-18-3920
     public class ObtenerPermisos
     { static string Usuario;
         OtorgarPermisos permisos = new OtorgarPermisos();
@@ -15,12 +15,6 @@ namespace CapaControladorSeguridadHSC
             set { Usuario = value; }
         }
 
-
-
-    }
-
-
-
-   
+    }         
    
 }

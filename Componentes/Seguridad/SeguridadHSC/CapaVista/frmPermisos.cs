@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using static datosUsuario;
-
+//Forma realizada por Heydi Quemé 9959-18-5335
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmPermisos : Form
@@ -31,7 +31,7 @@ namespace CapaVistaSeguridadHSC
             bnUsuario.Checked = false;
             rbPerfil.Checked = false;
         }
-
+        //Heydi Quemé 9959-18-5335
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Bitacora loggear = new Bitacora();
@@ -74,7 +74,7 @@ namespace CapaVistaSeguridadHSC
             actualizarpermisosUA();
             actualizarpermisosPA();
         }
-
+        //Heydi Quemé 9959-18-5335
         public void llenarcbxAplicacion()
         {
             try
@@ -90,7 +90,7 @@ namespace CapaVistaSeguridadHSC
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
-
+        //Heydi Quemé 9959-18-5335
         public void llenarcbxUsuario()
         {
             try
@@ -106,7 +106,7 @@ namespace CapaVistaSeguridadHSC
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
-
+        //Heydi Quemé 9959-18-5335
         public void llenarcbxPerfil()
         {
             try
@@ -122,42 +122,42 @@ namespace CapaVistaSeguridadHSC
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaUsuario(string nombre)
         {
             string id_usuario = con.consultausuario(nombre);
 
             return id_usuario;
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaPerfil(string nombre)
         {
             string id_perfil = con.consultaperfil(nombre);
 
             return id_perfil;
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaAplicacion(string nombre)
         {
             string id_aplicacion = con.consultaaplicacion(nombre);
 
             return id_aplicacion;
         }
-
+        //Heydi Quemé 9959-18-5335
         private void rbPerfil_CheckedChanged(object sender, EventArgs e)
         {
             Perfil = 1;
             Usuario = 0;
             llenarcbxPerfil();
         }
-
+        //Heydi Quemé 9959-18-5335
         private void bnUsuario_CheckedChanged(object sender, EventArgs e)
         {
             Perfil = 0;
             Usuario = 1;
             llenarcbxUsuario();
         }
-
+        //Heydi Quemé 9959-18-5335
         private void cbxEntidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Perfil == 1 && Usuario == 0)
@@ -176,12 +176,12 @@ namespace CapaVistaSeguridadHSC
                 }
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void cbxAplicacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelidaplicacion.Text = consultaAplicacion(cbxAplicacion.Text.ToString());
         }
-
+        //Heydi Quemé 9959-18-5335
         private void Escritura_CheckedChanged(object sender, EventArgs e)
         {
             if (Escritura.Checked == true)
@@ -193,7 +193,7 @@ namespace CapaVistaSeguridadHSC
                 escribir = 0;
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void Lectura_CheckedChanged(object sender, EventArgs e)
         {
             if (Lectura.Checked == true)
@@ -205,7 +205,7 @@ namespace CapaVistaSeguridadHSC
                 leer = 0;
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void Modificacion_CheckedChanged(object sender, EventArgs e)
         {
             if (Modificacion.Checked == true)
@@ -217,7 +217,7 @@ namespace CapaVistaSeguridadHSC
                 modificar = 0;
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void Eliminacion_CheckedChanged(object sender, EventArgs e)
         {
             if (Eliminacion.Checked == true)
@@ -229,7 +229,7 @@ namespace CapaVistaSeguridadHSC
                 eliminar = 0;
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void Impresion_CheckedChanged(object sender, EventArgs e)
         {
             if (Impresion.Checked == true)
@@ -244,40 +244,40 @@ namespace CapaVistaSeguridadHSC
 
         private string tabla1 = "vwpermisosusuario";
         private string tabla2 = "vwpermisosperfil";
-
+        //Heydi Quemé 9959-18-5335
         public void actualizarpermisosUA()
         {
             DataTable dt = con.llenarpermisosUA(tabla1);
             dtgPermisosUA.DataSource = dt;
         }
-
+        //Heydi Quemé 9959-18-5335
         public void actualizarpermisosPA()
         {
             DataTable dt = con.llenarpermisosPA(tabla2);
             dtgPermisosPA.DataSource = dt;
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaUsuarion(string id)
         {
             string nombre_usuario = con.consultausuarion(id);
 
             return nombre_usuario;
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaPerfiln(string id)
         {
             string nombre_perfil = con.consultaperfiln(id);
 
             return nombre_perfil;
         }
-
+        //Heydi Quemé 9959-18-5335
         public string consultaAplicacionn(string id)
         {
             string nombre_aplicacion = con.consultaaplicacionn(id);
 
             return nombre_aplicacion;
         }
-
+        //Heydi Quemé 9959-18-5335
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -355,7 +355,7 @@ namespace CapaVistaSeguridadHSC
             {
             }
         }
-
+        //Heydi Quemé 9959-18-5335
         private void dtgPermisosPA_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try

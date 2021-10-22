@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using static datosUsuario;
-
+//Danny Saldaña 9959-18-18686
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmAplicaciones : Form
@@ -24,19 +24,19 @@ namespace CapaVistaSeguridadHSC
         private string tabla2 = "aplicacion"; //aplicacion
         private string tabla3 = "UsuarioAplicacion"; //Usuario
         private string tabla4 = "perfil";
-
+        //Danny Saldaña 9959-18-18686
         public void actualizardatagriew()
         {
             DataTable dt = cn.aplicacionllenarTbl(tabla2);
             dtgConsulta.DataSource = dt;
         }
-
+        //Danny Saldaña 9959-18-18686
         public void aplicacionllenarTbl()
         {
             DataTable dt = cn.aplicacionllenarTblPerfil(tabla);
             dataGridView2.DataSource = dt;
         }
-
+        //Danny Saldaña 9959-18-18686
         public void actualizardatagriewpersonal()
         {
             try
@@ -50,7 +50,7 @@ namespace CapaVistaSeguridadHSC
                 MessageBox.Show("Error: " + ex);
             }
         }
-
+        //Danny Saldaña 9959-18-18686
         public void aplicacionllenarNombre()
         {
             string condicion = textBox1.Text;
@@ -58,7 +58,7 @@ namespace CapaVistaSeguridadHSC
             string dta = string.Join(Environment.NewLine, dt.Rows.OfType<DataRow>().Select(x => string.Join(" ; ", x.ItemArray)));
             textBox2.Text = dta;
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button1_Click(object sender, EventArgs e)
         {
             Bitacora loggear = new Bitacora();
@@ -69,7 +69,7 @@ namespace CapaVistaSeguridadHSC
             aplicacionllenarNombre();
             actualizardatagriewpersonal();
         }
-
+        //Danny Saldaña 9959-18-18686
         private void dtgConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox3.Text = dtgConsulta.CurrentRow.Cells[0].Value.ToString();
@@ -82,7 +82,7 @@ namespace CapaVistaSeguridadHSC
         private void fmConsulta_Load(object sender, EventArgs e)
         {
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button3_Click(object sender, EventArgs e)
         {
             textBox3.Text = dtgConsulta.CurrentRow.Cells[0].Value.ToString();
@@ -97,7 +97,7 @@ namespace CapaVistaSeguridadHSC
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button2_Click(object sender, EventArgs e)
         {
             Bitacora loggear = new Bitacora();
@@ -108,7 +108,7 @@ namespace CapaVistaSeguridadHSC
             cn.aplicacioneliminar(tabla3, valor1, valor2);
             actualizardatagriewpersonal();
         }
-
+        //Danny Saldaña 9959-18-18686
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox3.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -117,7 +117,7 @@ namespace CapaVistaSeguridadHSC
         private void label1_Click(object sender, EventArgs e)
         {
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button5_Click(object sender, EventArgs e)
         {
             Bitacora loggear = new Bitacora();
@@ -126,7 +126,7 @@ namespace CapaVistaSeguridadHSC
             cn.aplicacioneliminartodo(tabla3, valor1);
             actualizardatagriewpersonal();
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button4_Click(object sender, EventArgs e)
         {
             Bitacora loggear = new Bitacora();
@@ -137,7 +137,7 @@ namespace CapaVistaSeguridadHSC
             cn.aplicacioneliminartodo(tabla3, valor1);
             cn.aplicacionagregartodo(tabla3, valor1, valor2, tabla2);
         }
-
+        //Danny Saldaña 9959-18-18686
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             //Llenar con Enter
@@ -152,7 +152,7 @@ namespace CapaVistaSeguridadHSC
                 textBox2.Focus();
             }
         }
-
+        //Danny Saldaña 9959-18-18686
         private void button6_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -164,7 +164,7 @@ namespace CapaVistaSeguridadHSC
         }
 
         //Utilizar flechas para moverse entre botones
-
+        //Danny Saldaña 9959-18-18686
         private void button1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Down)

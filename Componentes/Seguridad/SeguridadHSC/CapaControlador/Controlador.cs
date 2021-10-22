@@ -9,20 +9,15 @@ namespace CapaControladorSeguridadHSC
     {
         private Sentencias sn = new Sentencias();
         private llamarPermisos ll = new llamarPermisos();
-        //Permisos de Botones
-
-
-
+        
+        //Permisos de Botones Luis de la Cruz 0901-18-17144
 
         public string definirpermisosperfil(string id, string p, string permiso, string t2, string pk, string app)
         {
             ll.llenarpermisos(id, p, permiso, t2, pk, app);
 
-
             MessageBox.Show(" 2da " + p);
-
             return p;
-
         }
 
 
@@ -32,7 +27,7 @@ namespace CapaControladorSeguridadHSC
         }
 
 
-        //frmLogin
+        //frmLogin Kevin Flores 9959-18-17632
         public int InicarSesion(string Usuario, string Contraseña, int validar)
         {
             validar = sn.funIniciarSesion(Usuario, Contraseña, validar);
@@ -45,15 +40,15 @@ namespace CapaControladorSeguridadHSC
             int estado = sn.funInicio(Usuario, Contrasena);
             return estado;
         }
-        //Controlador de bloquear usuario.
+        //Controlador de bloquear usuario. Heydi Quemé 9959-18-5335
         public void funcBloquearUsuario(string Usuario)
         {
-            string Consulta = "UPDATE componenteseguridad.usuario set estado= 0 where nombre= '" + Usuario + "';";
+            string Consulta = "UPDATE usuario set estado= 0 where nombre= '" + Usuario + "';";
             sn.funcModificar(Consulta);
         }
 
 
-        //frmMantenimientoAplicacion
+        //frmMantenimientoAplicacion. Sebastián Moreira 9959-18-7960
         public void insertarAplicacion(string Id, string modulo, string nombre, int Estado, string RutaChm, string rutahtml)
         {
             sn.funInsertar(Id, modulo, nombre, Estado, RutaChm, rutahtml);
@@ -96,7 +91,7 @@ namespace CapaControladorSeguridadHSC
         }
 
 
-        //frmPerfiles
+        //frmPerfiles Danny Saldaña 9959-18-18686
         public DataTable PerfilllenarTbl(string tabla2)
         {
             OdbcDataAdapter dt = sn.PerfilllenarTbl(tabla2);
@@ -141,8 +136,8 @@ namespace CapaControladorSeguridadHSC
             sn.Perfilagregartodo(tabla3, valor1, valor2, tabla2);
         }
 
-        //frmApliaciones
-        //frmApliaciones
+        //frmApliaciones Roberto López 0901-18-4982
+        
         public DataTable aplicacionllenarTbl(string tabla2)
         {
             OdbcDataAdapter dt = sn.aplicacionllenarTbl(tabla2);
@@ -206,14 +201,13 @@ namespace CapaControladorSeguridadHSC
         }
 
 
-
         public void aplicacioneliminartodo(string tabla3, string valor1)
         {
             sn.aplicacioneliminartodo(tabla3, valor1);
         }
 
-        //frmRecuperarContraseña
-        //frmRContraseña
+        //frmRecuperarContraseña. Heydi Quemé 9959-18-5335
+        
         public void recuperarContraseña(string Usuario, string Contraseña)
         {
             try
@@ -231,7 +225,7 @@ namespace CapaControladorSeguridadHSC
             return sn.llenarcbxUsuario(sql);
         }
 
-        //Mantenimiento Perfil
+        //Mantenimiento Perfil Ivania Gatica 0901-18-19528
 
         public void insertarPerfil(string Id, string Nombre, int Estado)
         {
@@ -253,7 +247,7 @@ namespace CapaControladorSeguridadHSC
         {
             sn.funEliminarPerfil(id);
         }
-
+        //Luis de la Cruz 0901-18-17144
         public DataTable llenarTbl(string tabla)
         {
             OdbcDataAdapter dt = sn.llenarTbl(tabla);
@@ -262,7 +256,7 @@ namespace CapaControladorSeguridadHSC
             return table;
         }
 
-        //Aplicacion a perfiles
+        //Aplicacion a perfiles Roberto López 0901-18-4982
         public DataTable llenarTblappaperf(string tabla2)
         {
             OdbcDataAdapter dt = sn.llenarTblappaperf(tabla2);
@@ -307,7 +301,7 @@ namespace CapaControladorSeguridadHSC
             sn.perfilagregartodoappaperf(tabla3, valor1, valor2, tabla2);
         }
 
-        //Cambiar contraseña
+        //Cambiar contraseña Roberto López 0901-18-4982
 
         public OdbcDataReader funcModificar_Contraseña(string Usuario, string Contraseña)
         {
@@ -320,7 +314,7 @@ namespace CapaControladorSeguridadHSC
             sn.registrarUsuario(pkId, fkIdEmpleado, nombre, contraseña, estado);
         }
 
-        //frmPermisos
+        //frmPermisos Heydi Quemé 9959-18-5335
         public OdbcDataReader llenarcbxPerfil()
         {
             string sql = "SELECT nombre FROM componenteseguridad.perfil;";
@@ -400,7 +394,7 @@ namespace CapaControladorSeguridadHSC
             return nombre;
         }
 
-        //Mantenimiento Perfil
+        //Mantenimiento Modulo Kevin Flores 9959-18-17632
 
         public void metodoInsertar(string Id, string Nombre, string Descripcion, int Estado)
         {

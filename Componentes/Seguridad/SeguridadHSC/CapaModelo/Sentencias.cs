@@ -9,14 +9,14 @@ namespace CapaModeloSeguridadHSC
         private Conexion cn = new Conexion();
         private OdbcCommand Comm;
 
-        //frmLogin Kevin Flores 
+        //frmLogin Kevin Flores 9959-18-17632
         public int funIniciarSesion(string Usuario, string Contraseña, int validar)
         {
             try
             {
                 string con = "";
 
-                string Query = "select * from `componenteseguridad`.`Usuario` where nombre='" + Usuario + "';";
+                string Query = "select * from Usuario where nombre='" + Usuario + "';";
 
                 OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
                 consulta.ExecuteNonQuery();
@@ -44,7 +44,7 @@ namespace CapaModeloSeguridadHSC
             {
                 string Us = "";
                 string Con = "";
-                Comm = new OdbcCommand("SELECT nombre, contraseña FROM componenteseguridad.usuario WHERE nombre ='" + Usuario + "' AND contraseña ='" + Contrasena + "' AND estado = 1 ;", cn.conexion());
+                Comm = new OdbcCommand("SELECT nombre, contraseña FROM usuario WHERE nombre ='" + Usuario + "' AND contraseña ='" + Contrasena + "' AND estado = 1 ;", cn.conexion());
                 OdbcDataReader reader = Comm.ExecuteReader();
                 reader.Read();
                 Us = reader.GetString(0);
@@ -66,7 +66,7 @@ namespace CapaModeloSeguridadHSC
             }
         }
 
-        //frmMantenimientoAplicacion Sebastián Moreira 
+        //frmMantenimientoAplicacion Sebastián Moreira 9959-18-7960
         public void funInsertar(string Id, string Nombre, string Modulo, int estado, string rutaChm, string rutaHtml)
         {
             //INSERT INTO `componenteseguridad`.`aplicacion` (`pkId`, `fkIdModulo`, `nombre`, `estado`, `rutaChm`, `rutaHtml`) VALUES('1001', '2', 'Conta', '1', '0', '0');
@@ -78,7 +78,7 @@ namespace CapaModeloSeguridadHSC
 
         public void funModificar(string Id, string Modulo, string Nombre, int estado, string rutaChm, string rutaHtml)
         {
-            string cadena = "UPDATE componenteseguridad.aplicacion set pkId ='" + Id + "', fkIdModulo= '" + Modulo
+            string cadena = "UPDATE aplicacion set pkId ='" + Id + "', fkIdModulo= '" + Modulo
               + "',nombre ='" + Nombre + "',estado = " + estado + ", rutaChm = '" + rutaChm + "', rutaHtml = '" + rutaHtml + "'  where pkId= '" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
@@ -87,7 +87,7 @@ namespace CapaModeloSeguridadHSC
 
         public void funEliminar(string Id)
         {
-            string cadena = "delete from componenteseguridad.aplicacion where pkId ='" + Id + "';";
+            string cadena = "delete from aplicacion where pkId ='" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace CapaModeloSeguridadHSC
 
         public (string, int) funBuscar(string id, string nombre, int estado, string ruta)
         {
-            string Query = "select * from `componenteseguridad`.`Aplicacion` where pkId='" + id + "';";
+            string Query = "select * from Aplicacion where pkId='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -124,7 +124,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string id = "";
-            string Query = "select * from `componenteseguridad`.`Modulo` where nombre='" + nombre + "';";
+            string Query = "select * from Modulo where nombre='" + nombre + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -144,7 +144,7 @@ namespace CapaModeloSeguridadHSC
         }
 
 
-        //frmPerfiles Heydi Quemé
+        //frmPerfiles Danny Saldaña 9959-18-18686
 
         public OdbcDataAdapter PerfilllenarTbl(string tabla2)// metodo  que obtinene el contenido de una tabla
         {
@@ -203,7 +203,7 @@ namespace CapaModeloSeguridadHSC
             consulta2.ExecuteNonQuery();
         }
 
-        //frmAplicaciones Danny Saldaña
+        //frmAplicaciones Danny Saldaña 9959-18-18686
         public OdbcDataAdapter aplicacionllenarTbl(string tabla2)// metodo  que obtinene el contenido de una tabla
         {
             //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
@@ -270,7 +270,7 @@ namespace CapaModeloSeguridadHSC
             OdbcCommand consulta2 = new OdbcCommand(sql2, cn.conexion());
             consulta2.ExecuteNonQuery();
         }
-        //frmAplicaciones Danny Saldaña
+        //frmAplicaciones Danny Saldaña 9959-18-18686
 
         public OdbcDataAdapter aplicacionllenarTblPersonal(string tabla2)// metodo  que obtinene el contenido de una tabla
         {
@@ -290,7 +290,7 @@ namespace CapaModeloSeguridadHSC
 
 
 
-        //frmRecuperarContraseña Heydi Quemé
+        //frmRecuperarContraseña Heydi Quemé 9959-18-17632
         public OdbcDataReader funcModificarContraseña(string Consulta)
         {
             try
@@ -310,8 +310,7 @@ namespace CapaModeloSeguridadHSC
         {
             try
             {
-                string cadena = "UPDATE" +
-                " `componenteseguridad`.`Usuario` SET contraseña=" + Contraseña + "WHERE nombre=" + Usuario + "';";
+                string cadena = "UPDATE Usuario SET contraseña=" + Contraseña + "WHERE nombre=" + Usuario + "';";
 
                 OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
                 consulta.ExecuteNonQuery();
@@ -337,12 +336,11 @@ namespace CapaModeloSeguridadHSC
             }
         }
 
-        //mantenimiento Perfil Luis de la Cruz
+        //mantenimiento Perfil Luis de la Cruz 0901-18-17144
 
         public void funInsertar(string Id, string Nombre, int estado)
         {
-            string cadena = "INSERT INTO" +
-            " `componenteseguridad`.`Perfil` VALUES ('" + Id + "', '" + Nombre + "' , '" + estado + "');";
+            string cadena = "INSERT INTO Perfil VALUES ('" + Id + "', '" + Nombre + "' , '" + estado + "');";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -350,7 +348,7 @@ namespace CapaModeloSeguridadHSC
 
         public void funModificar(string Id, string Nombre, int estado)
         {
-            string cadena = "UPDATE componenteseguridad.perfil set pkId ='" + Id
+            string cadena = "UPDATE perfil set pkId ='" + Id
               + "',nombre ='" + Nombre + "',estado = " + estado + "  where pkId= '" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
@@ -359,7 +357,7 @@ namespace CapaModeloSeguridadHSC
 
         public void funEliminarPerfil(string Id)
         {
-            string cadena = "delete from componenteseguridad.perfil where pkId ='" + Id + "';";
+            string cadena = "delete from perfil where pkId ='" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -367,7 +365,7 @@ namespace CapaModeloSeguridadHSC
 
         public (string, int) funBuscar(string id, string nombre, int estado)
         {
-            string Query = "select * from `componenteseguridad`.`Perfil` where pkId='" + id + "';";
+            string Query = "select * from `Perfil` where pkId='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -392,7 +390,7 @@ namespace CapaModeloSeguridadHSC
             return dataTable;
         }
 
-        //Aplicacion a perfiles Roberto López
+        //Aplicacion a perfiles Roberto López 0901-18-4982
         public OdbcDataAdapter llenarTblappaperf(string tabla2)// metodo  que obtinene el contenido de una tabla
         {
             //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
@@ -449,7 +447,7 @@ namespace CapaModeloSeguridadHSC
             consulta2.ExecuteNonQuery();
         }
 
-        //Cambiar contraseña Roberto López
+        //Cambiar contraseña Roberto López 0901-18-4982
 
         public OdbcDataReader funcModificar(string Consulta)
         {
@@ -482,7 +480,7 @@ namespace CapaModeloSeguridadHSC
             }
         }
 
-        //frmPermisos
+        //frmPermisos Heydi Quemé 9959-18-5335
         public OdbcDataReader llenarcbxPerfil(string sql)
         {
             try
@@ -532,7 +530,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string id = "";
-            string Query = "select * from `componenteseguridad`.`Perfil` where nombre='" + nombre + "';";
+            string Query = "select * from Perfil where nombre='" + nombre + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -555,7 +553,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string id = "";
-            string Query = "select * from `componenteseguridad`.`Usuario` where nombre='" + nombre + "';";
+            string Query = "select * from Usuario where nombre='" + nombre + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -578,7 +576,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string id = "";
-            string Query = "select * from `componenteseguridad`.`Aplicacion` where nombre='" + nombre + "';";
+            string Query = "select * from Aplicacion where nombre='" + nombre + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -655,7 +653,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string nombre = "";
-            string Query = "select * from `componenteseguridad`.`Perfil` where pkid='" + id + "';";
+            string Query = "select * from Perfil where pkid='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -678,7 +676,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string nombre = "";
-            string Query = "select * from `componenteseguridad`.`Usuario` where pkid='" + id + "';";
+            string Query = "select * from Usuario where pkid='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -701,7 +699,7 @@ namespace CapaModeloSeguridadHSC
         {
 
             string nombre = "";
-            string Query = "select * from `componenteseguridad`.`Aplicacion` where pkid='" + id + "';";
+            string Query = "select * from Aplicacion where pkid='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -734,7 +732,7 @@ namespace CapaModeloSeguridadHSC
 
         public void metodoModificar(string Id, string Nombre, string Descripcion, int estado)
         {
-            string cadena = "UPDATE componenteseguridad.modulo set pkId ='" + Id
+            string cadena = "UPDATE modulo set pkId ='" + Id
               + "',nombre ='" + Nombre + "',descripcion ='" + Descripcion + "',estado = " + estado + "  where pkId= '" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
@@ -743,7 +741,7 @@ namespace CapaModeloSeguridadHSC
 
         public void metodoEliminar(string Id)
         {
-            string cadena = "delete from componenteseguridad.modulo where pkId ='" + Id + "';";
+            string cadena = "delete from modulo where pkId ='" + Id + "';";
 
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -751,7 +749,7 @@ namespace CapaModeloSeguridadHSC
 
         public (string, string, int) metodoBuscar(string id, string nombre, string descripcion, int estado)
         {
-            string Query = "select * from `componenteseguridad`.`Modulo` where pkId='" + id + "';";
+            string Query = "select * from Modulo where pkId='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();

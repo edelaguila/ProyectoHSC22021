@@ -6,7 +6,7 @@ using System.Data.Odbc;
 using System.Windows.Forms;
 using static datosUsuario;
 
-
+//Forma realizada por Sebastián Moreira 9959-18-7960
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmMantenimientoAplicacion : Form
@@ -23,7 +23,7 @@ namespace CapaVistaSeguridadHSC
         }
 
 
-
+        // Sebastián Moreira 9959-18-7960
         public void funLimpiar()
         {
             textBox1.Text = "";
@@ -38,16 +38,16 @@ namespace CapaVistaSeguridadHSC
             cbxModulo.SelectedIndex = 0;
         }
 
-
+        // Sebastián Moreira 9959-18-7960
 
         private void btnHabilitado_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.Text = "1";
+            textBox3.Text = "A";
         }
 
         private void btnInhabilitado_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.Text = "0";
+            textBox3.Text = "I";
         }
 
 
@@ -58,11 +58,11 @@ namespace CapaVistaSeguridadHSC
         {
 
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Inserción realizada");
                 conAplicacion.insertarAplicacion(textBox1.Text, textBox6.Text, textBox2.Text, int.Parse(textBox3.Text), textBox4.Text, textBox5.Text);
                 MessageBox.Show("Insercion realizada");
@@ -70,17 +70,17 @@ namespace CapaVistaSeguridadHSC
 
             }
             catch (Exception ex)
-            {
+            {   //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Error al realizar Inserción");
                 MessageBox.Show("Error: Debes llenar todos los campos"+ex);
             }
             actualizardatagriew();
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Modificación Exitosa");
                 conAplicacion.modificarAplicacion(textBox1.Text, textBox6.Text, textBox2.Text, int.Parse(textBox3.Text), textBox4.Text, textBox5.Text);
                 MessageBox.Show("Modificacion realizada");
@@ -88,16 +88,16 @@ namespace CapaVistaSeguridadHSC
                 actualizardatagriew();
             }
             catch (Exception ex)
-            {
+            {   //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Error al modificar");
                 MessageBox.Show("Error: " + ex);
             }
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {    //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Eliminar");
                 conAplicacion.eliminarAplicacion(textBox1.Text);
                 MessageBox.Show("Eliminacion realizada");
@@ -109,12 +109,12 @@ namespace CapaVistaSeguridadHSC
                 MessageBox.Show("Error: No has ingresado Id del registro a eliminar");
             }
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             funLimpiar();
         }
-
+        // Sebastián Moreira 9959-18-7960
         public void llenarcbxAplicacion()
         {
             try
@@ -134,7 +134,7 @@ namespace CapaVistaSeguridadHSC
 
 
 
-
+        // Sebastián Moreira 9959-18-7960
         private void button1_Click(object sender, EventArgs e)
         {
             using (var fd = new FolderBrowserDialog())
@@ -150,7 +150,7 @@ namespace CapaVistaSeguridadHSC
         {
 
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void button2_Click(object sender, EventArgs e)
         {
             using (var fd = new FolderBrowserDialog())
@@ -161,7 +161,7 @@ namespace CapaVistaSeguridadHSC
                 }
             }
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void cbxModulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -179,21 +179,21 @@ namespace CapaVistaSeguridadHSC
         }
 
         String tabla = "Aplicacion";
-
+        // Sebastián Moreira 9959-18-7960
         public void actualizardatagriew()
         {
             DataTable dt = conAplicacion.llenarTblAplicacion(tabla);
             dataGridView1.DataSource = dt;
 
         }
-
+        // Sebastián Moreira 9959-18-7960
         public string consultaModulo(string nombre)
         {
             string id_modulo = conAplicacion.consultaModulo(nombre);
 
             return id_modulo;
         }
-
+        // Sebastián Moreira 9959-18-7960
         private void dataGridView1_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -203,11 +203,11 @@ namespace CapaVistaSeguridadHSC
             textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
-            if (textBox3.Text == "1")
+            if (textBox3.Text == "A")
             {
                 btnHabilitado.Checked = true;
             }
-            else if (textBox3.Text == "0")
+            else if (textBox3.Text == "I")
             {
                 btnInhabilitado.Checked = true;
             }

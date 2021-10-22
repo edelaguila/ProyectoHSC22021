@@ -3,7 +3,7 @@ using CapaControladorSeguridadHSC;
 using System;
 using System.Windows.Forms;
 using static datosUsuario;
-
+//Forma realizada por Kevin Flores 9959-18-17632
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmLoginHSC : Form
@@ -41,7 +41,7 @@ namespace CapaVistaSeguridadHSC
         {
             funValidarUsuario();
         }
-
+        //Kevin Flores 9959-18-17632
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string Usuario = txtUsuario.Text.Trim();
@@ -115,6 +115,7 @@ namespace CapaVistaSeguridadHSC
                 MessageBox.Show("Debe ingresar su usuario ");
             }*/
         }
+        //Kevin Flores 9959-18-17632
         public string usuario()
         {
             return txtUsuario.Text;
@@ -122,21 +123,21 @@ namespace CapaVistaSeguridadHSC
         private void label1_Click(object sender, EventArgs e)
         {
         }
-
+        //Kevin Flores 9959-18-17632
         private void btnPassword_Click(object sender, EventArgs e)
         {
             txtClave.UseSystemPasswordChar = false;
             btnPassword.Visible = false;
             btnPasswordn.Visible = true;
         }
-
+        //Kevin Flores 9959-18-17632
         private void btnPasswordn_Click(object sender, EventArgs e)
         {
             txtClave.UseSystemPasswordChar = true;
             btnPassword.Visible = true;
             btnPasswordn.Visible = false;
         }
-
+        //Kevin Flores 9959-18-17632
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             //mostrara ayuda
@@ -146,7 +147,7 @@ namespace CapaVistaSeguridadHSC
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         }
-
+        //Kevin Flores 9959-18-17632
         public void funLimpiar()
         {
             txtUsuario.Text = "";
@@ -156,7 +157,7 @@ namespace CapaVistaSeguridadHSC
             adClave.Visible = false;
             adUser.Visible = false;
         }
-
+        //Kevin Flores 9959-18-17632
         public void funValidarUsuario()
         {
             if (txtUsuario.Text.Trim() != "")
@@ -170,7 +171,7 @@ namespace CapaVistaSeguridadHSC
                 adUser.Visible = true;
             }
         }
-
+        //Kevin Flores 9959-18-17632
         public void funValidarClave()
         {
             if (txtClave.Text.Trim() != "")
@@ -184,12 +185,12 @@ namespace CapaVistaSeguridadHSC
                 adClave.Visible = true;
             }
         }
-
+        //Kevin Flores 9959-18-17632
         private void txtUsuario_EnabledChanged(object sender, EventArgs e)
         {
             txtUsuario.Text = "";
         }
-
+        //Kevin Flores 9959-18-17632
         //Desplasamiento con botones
         private void txtClave_KeyDown(object sender, KeyEventArgs e)
         {
@@ -210,7 +211,7 @@ namespace CapaVistaSeguridadHSC
                 funValidarUsuario();
             }
         }
-
+        //Kevin Flores 9959-18-17632
         private void lkbRecuperarContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             funLimpiar();
