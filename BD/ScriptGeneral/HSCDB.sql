@@ -1,4 +1,4 @@
--- DROP DATABASE hotelSanCarlos;
+DROP DATABASE hotelSanCarlos;
 CREATE DATABASE hotelSanCarlos;
 USE hotelSanCarlos;
 
