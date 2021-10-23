@@ -97,6 +97,7 @@ namespace CapaVista
             this.Name = "menuconsultas";
             this.Text = "menuconsultas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.menuconsultas_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

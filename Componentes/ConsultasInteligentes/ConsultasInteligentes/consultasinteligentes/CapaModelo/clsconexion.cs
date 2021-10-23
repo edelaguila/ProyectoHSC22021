@@ -9,10 +9,11 @@ namespace CapaModelo
 {
    public class clsconexion
     {
+        //Adolfo Monterroso 0901-18-50
         public OdbcConnection conexion()
         {
-            //creacion de la conexion via ODBC
-            OdbcConnection conn = new OdbcConnection("Dsn=Prueba");
+            //creacion de la conexion via ODBC        
+            OdbcConnection conn = new OdbcConnection("Dsn=ConexionHSC");
             try
             {
                 conn.Open();

@@ -8,6 +8,7 @@ namespace CapaControladorSeguridadHSC
 {
     public class Encriptar
     {
+        //Roberto Lopez 0901-18-4982
         //Funcion para encriptar
         public string funcEncryptString(string key, string plainText)
         {
@@ -37,7 +38,7 @@ namespace CapaControladorSeguridadHSC
 
             return Convert.ToBase64String(array);
         }
-
+        //Roberto Lopez 0901-18-4982
         //fucion para desencriptar
         public string funcDecryptString(string key, string cipherText)
         {

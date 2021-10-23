@@ -29,13 +29,15 @@ namespace VistaReporteador
         ControladorQ sn = new ControladorQ();
 
         String tabla = "reportes";
-
-        public void actualizardatagriew()
+        //Francisco 0901-17-16694
+        public void actualizardatagriew()//Funcion de actualizar 
         {
             DataTable dt = sn.llenarTbl(tabla);
             dataGridView1.DataSource = dt;
         }
-        
+
+        //Angel Chacón 9959-18-5201 
+        //funcion para mostrar id en el combobox de las apliaciones existentes
         public void llenarcbxIdAplic()
         {
             try
@@ -50,7 +52,9 @@ namespace VistaReporteador
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
-
+    
+        //Angel Chacón 9959-18-5201 
+        //funcion para mostrar los nombres en el combobox de las apliaciones existentes
         public void llenarcbxAplicacion()
         {
             try
@@ -66,7 +70,7 @@ namespace VistaReporteador
             catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
 
-
+        //Carol Monterroso 0901-17-5961
         //Funciones
         public void activarTextBox()
         {
@@ -76,7 +80,7 @@ namespace VistaReporteador
             cbxIdAplic.Enabled = true;
             cbxAplicacion.Enabled = true;
         }
-
+        //Carol Monterroso 0901-17-5961
         public void desactivarTextBox()
         {
             textBoxID.Enabled = false;
@@ -85,7 +89,7 @@ namespace VistaReporteador
             cbxIdAplic.Enabled = false;
             cbxAplicacion.Enabled = false;          
         }
-
+        //Carol Monterroso 0901-17-5961
         public void cleanTextBox()
         {
             textBoxID.Text = "";
@@ -95,13 +99,15 @@ namespace VistaReporteador
             cbxIdAplic.Text = "";
             cbxAplicacion.Text = "";
         }
-
+        //Carol Monterroso 0901-17-5961
         public void dataGrid()
         {
             ControladorQ c = new ControladorQ();
             c.data(Convert.ToString(dataGridView1.DataSource));           
         }
 
+        //Angel Chacón 9959-18-5201 
+        //llamada a la funcion para modificar datos en la tabla de roportes
         private void button1_Click(object sender, EventArgs e)
         {
             ControladorQ cq = new ControladorQ();
@@ -111,18 +117,22 @@ namespace VistaReporteador
             dataGrid();
         }
 
+        //Carol Monterroso 0901-17-5961
         private void button2_Click(object sender, EventArgs e)
         {
-            frmEliminar eli = new frmEliminar();
-            eli.Show();
+            ControladorQ cq = new ControladorQ();
+            cq.Actualizar(textBoxNombre.Text, textBoxRuta.Text, cbxIdAplic.Text, txtEstado.Text, textBoxID.Text);
+            cleanTextBox();
+            desactivarTextBox();
             dataGrid();
         }
-
+        //Carol Monterroso 0901-17-5961
         private void button3_Click(object sender, EventArgs e)
         {
             activarTextBox();
         }
 
+        // Luis Reyes 0901-15-3121
         private void button4_Click(object sender, EventArgs e)
         {          
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -130,14 +140,14 @@ namespace VistaReporteador
                 textBoxRuta.Text = openFileDialog.FileName;
             }            
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        //Francisco 0901-17-16694
+        private void button5_Click(object sender, EventArgs e)//Llama y actualiza datagrid
         {
             actualizardatagriew();
         }
-        
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Francisco 0901-17-16694
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)// Muestra los datos en los texbox al seleccionarlos en el data grid por medio del evento mouse
         {
             textBoxID.Text= dataGridView1.CurrentRow.Cells[0].Value.ToString();            
             textBoxNombre.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -146,6 +156,8 @@ namespace VistaReporteador
             txtEstado.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();            
         }
 
+        //Angel Chacón 9959-18-5201 
+        //obtenicion de valor para el estado al seleccionar el radio button de activo
         private void rbVisible_CheckedChanged(object sender, EventArgs e)
         {
             String est;
@@ -156,6 +168,8 @@ namespace VistaReporteador
             }            
         }
 
+        //Angel Chacón 9959-18-5201 
+        //obtenicion de valor para el estado al seleccionar el radio button de inactivo
         private void rbNovisible_CheckedChanged(object sender, EventArgs e)
         {
             String est;
@@ -166,20 +180,25 @@ namespace VistaReporteador
             }
         }
 
-        
+        //Angel Chacón 9959-18-5201 
+        //Funcion para visalizar los reportes asociados a los modulos de trabajo
         public void abrir_Click(object sender, EventArgs e)
         {
-            string r = textBoxRuta.Text;
-            frmReporteAdm b = new frmReporteAdm(r);
-            b.Show();
+            int est;
+            est = int.Parse(txtEstado.Text);
+            if (est == 1)
+            {
+                string r = textBoxRuta.Text;
+                frmReporteAdm b = new frmReporteAdm(r);
+                b.Show();
+            }
+            else
+            {
+                MessageBox.Show("Reporte Desabilitado");
+            }
         }
 
-        public void a()
-        {
-            string r = textBoxRuta.Text;
-            MessageBox.Show(r);
-        }
-
+      
         public void textBoxRuta_TextChanged(object sender, EventArgs e)
         {
             
@@ -240,11 +259,15 @@ namespace VistaReporteador
 
         }
 
+        //Angel Chacón 9959-18-5201 
+        //obtencion de datos de la funcion de controlador
         private void cbxAplicacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarcbxIdAplic();
         }
 
+        // Angel Chacón 9959-18-5201
+        //llamada a la funcion de controlador para guardar reporte
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             ControladorQ cq = new ControladorQ();
@@ -252,6 +275,11 @@ namespace VistaReporteador
             cleanTextBox();
             desactivarTextBox();
             dataGrid();
+        }
+
+        private void cbxIdAplic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

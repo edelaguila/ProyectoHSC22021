@@ -37,6 +37,7 @@ namespace VistaReporteador
             this.label2 = new System.Windows.Forms.Label();
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@ namespace VistaReporteador
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(763, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(762, 310);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -126,6 +127,14 @@ namespace VistaReporteador
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEstado.Location = new System.Drawing.Point(646, 157);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(100, 20);
+            this.txtEstado.TabIndex = 27;
+            // 
             // ReporteadorUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +148,7 @@ namespace VistaReporteador
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRuta);
+            this.Controls.Add(this.txtEstado);
             this.Name = "ReporteadorUsuario";
             this.Text = "ReporteadorUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -157,5 +167,6 @@ namespace VistaReporteador
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRuta;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }

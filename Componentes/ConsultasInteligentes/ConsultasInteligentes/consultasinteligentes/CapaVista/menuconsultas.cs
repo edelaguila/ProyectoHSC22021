@@ -22,11 +22,18 @@ namespace CapaVista
         {
         }
 
+        //Adolfo Monterroso 0901-18-50
+        //Agregamos menu principal que contenga los forms
         private void consultasInteligentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultasInteligentes frmcons = new ConsultasInteligentes();
             frmcons.MdiParent = this;
             frmcons.Show();
+
+        }
+
+        private void menuconsultas_Load(object sender, EventArgs e)
+        {
 
         }
     }

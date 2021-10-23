@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
 
+//0901-18-17144 Luis De la Cruz
 namespace CapaControladorSeguridadHSC
 {
     public class bloqueos

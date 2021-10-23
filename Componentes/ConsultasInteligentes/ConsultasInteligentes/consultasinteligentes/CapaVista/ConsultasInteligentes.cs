@@ -47,11 +47,15 @@ namespace CapaVista
         }
 
         string consulta = "";
+        //Adolfo Monterroso 0901-18-50
+        //El dataGrid se llena con las consultas existentes
         public void actualizardatagrid()
         {
             DataTable dt = cn.llenartb1(consulta);
             dgvCONSULTAS.DataSource = dt;
         }
+        //Adolfo Monterroso 0901-18-50
+        //Llenar combobox de tablas
         public void llenarcombo()
         {
             cbotablas.Items.Clear();
@@ -62,6 +66,8 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
+        //Llenar combobox con consultas almacenadas
         public void llenarcboinsert(string prueba)
         {
                 cbovalidar.Items.Clear();
@@ -71,6 +77,8 @@ namespace CapaVista
                         cbovalidar.Items.Add(dataReader[0].ToString());
                     }
         }
+        //Adolfo Monterroso 0901-18-50
+        //Llenar combos de columnas de tablas
         public void llenarcombo2()
         {
             cboCampos.Items.Clear();
@@ -88,6 +96,8 @@ namespace CapaVista
         }
 
         string query = "registro_consultas";
+        //Adolfo Monterroso 0901-18-50
+        //Llenamos los combobox con querys existentes
         public void llenarcboquery()
         {
             cboQuery.Items.Clear();
@@ -105,6 +115,8 @@ namespace CapaVista
             
         }
 
+        //Adolfo Monterroso 0901-18-50
+        //Agregamos consultas
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (chkSelectTodos.Checked == false)
@@ -147,6 +159,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void chkSelectTodos_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -175,6 +188,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void chkcondiciones_CheckedChanged(object sender, EventArgs e)
         {
             if ((chkcondiciones.Checked == true) && (csimple !=""))
@@ -189,6 +203,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarCamposSeleccionados_Click(object sender, EventArgs e)
         {
             if (campo == "")
@@ -208,6 +223,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void button10_Click(object sender, EventArgs e)
         {
             //Boton de crear
@@ -231,6 +247,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void limpiar()
         {
             chkcondiciones.Checked = false;
@@ -257,6 +274,7 @@ namespace CapaVista
             final = "";
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void habilitaciones()
         {
             gpbConsultaCompleja.Enabled = false;
@@ -266,6 +284,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void button11_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -273,6 +292,7 @@ namespace CapaVista
             cbotablas.Text = "";
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnBuscarCONSULTAS_Click(object sender, EventArgs e)
         {
             actualizardatagrid();
@@ -283,6 +303,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cboQuery_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbocopiaquery.SelectedIndex = cboQuery.SelectedIndex;
@@ -300,6 +321,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarComparacion_Click(object sender, EventArgs e)
         {
                 where = cboTipoComparador.SelectedItem.ToString() + " " + cboCampoComparacion.SelectedItem.ToString() + "=" +
@@ -308,6 +330,7 @@ namespace CapaVista
                 txtCadenaGenerada.Text = csimple + where;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarConsultaCompleja_Click(object sender, EventArgs e)
         {
             if ((cboOperadorLogico.Text == "") || (cboCampoLogica.Text == "") || (txtValor.Text == "")||(cboandcre.Text==""))
@@ -339,6 +362,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarAgruparordenar_Click(object sender, EventArgs e)
         {
             if (rdbDesc.Checked == true)
@@ -366,6 +390,7 @@ namespace CapaVista
         }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cboAgruparOrdenar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cboAgruparOrdenar.SelectedIndex == 1)
@@ -379,6 +404,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void button1_Click(object sender, EventArgs e)
         {
             if ((cboTipoComparador.Text == "")|| (cboCampoComparacion.Text == "")|| (txtValorComparacion.Text == "")||(cbocompcre.Text==""))
@@ -406,29 +432,34 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void actualizaconsultas()
         {
             DataTable dt = cn.llenartb2();
             dgvBUSCARyELIMINAR.DataSource = dt;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnConsultaBUSCARyELIMINAR_Click(object sender, EventArgs e)
         {
             actualizaconsultas();
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void actualizaconsultas2(string condicion)
         {
             DataTable dt = cn.llenartb3(condicion);
             dgvBUSCARyELIMINAR.DataSource = dt;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnBuscarBUSCARyELIMINAR_Click(object sender, EventArgs e)
         {
             actualizaconsultas2(txtNombreConsultaBUSCARyELIMINAR.Text);
         }
 
 
+        //Adolfo Monterroso 0901-18-50
         private void btnEliminarBUSCARyELIMINAR_Click(object sender, EventArgs e)
         {
             cn.ejecutarconsulta(txtNombreConsultaBUSCARyELIMINAR.Text);
@@ -437,6 +468,7 @@ namespace CapaVista
             txtNombreConsultaBUSCARyELIMINAR.Text = "";
         }
 
+        //Adolfo Monterroso 0901-18-50
         //Pestaña TAB3 EDITAR a partir de aca
         string transfiere = "";
         string campoeditar = "";
@@ -446,6 +478,7 @@ namespace CapaVista
         string ordeneditar = "";
         string groupeditar = "";
         string finaleditar = "";
+        //Adolfo Monterroso 0901-18-50
         private void btnActualizarBUSCARyELIMINAR_Click(object sender, EventArgs e)
         {
             transfiere = txtNombreConsultaBUSCARyELIMINAR.Text;
@@ -456,6 +489,7 @@ namespace CapaVista
             tabPage3.Show();        
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void llenarcomboeditar()
         {
             cbonombreconsulta.Items.Clear();
@@ -466,6 +500,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cbonombreconsulta_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtTablaConsultaSimple.Text = cbonombreconsulta.SelectedItem.ToString();
@@ -473,6 +508,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cboTablaConsultaSimple_SelectedIndexChanged(object sender, EventArgs e)
         {
             txttablaeditar.Text = cboTablaConsultaSimple.SelectedItem.ToString();
@@ -480,6 +516,7 @@ namespace CapaVista
             chkSelectTodosConsultaSimple.Enabled = true;
         }
 
+        //Adolfo Monterroso 0901-18-50
         public void tablaseditar()
         {
             cboTabla.Items.Clear();
@@ -489,6 +526,7 @@ namespace CapaVista
                 cboTablaConsultaSimple.Items.Add(datareader[0].ToString());
             }
         }
+        //Adolfo Monterroso 0901-18-50
         public void llenarcombosactualizar()
         {
             cboCamposEDITAR.Items.Clear();
@@ -505,6 +543,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void chkSelectTodosConsultaSimple_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -525,6 +564,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarCONSULTASIMPLE_Click(object sender, EventArgs e)
         {
             if (chkSelectTodosConsultaSimple.Checked == false)
@@ -570,6 +610,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnagregarcamposeditar_Click(object sender, EventArgs e)
         {
             if (campoeditar == "")
@@ -591,6 +632,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void chkcondicioneseditar_CheckedChanged(object sender, EventArgs e)
         {
             if ((chkcondicioneseditar.Checked == true) && (csimpleeditar != ""))
@@ -606,6 +648,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarComparacionEDITAR_Click(object sender, EventArgs e)
         {
             if ((cboTipoComparadorEDITAR.Text == "") || (cboCampoEDITAR.Text == "") || (txtValorComparacionEDITAR.Text == "")||(cbocompwhere.Text==""))
@@ -628,6 +671,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnagregarCONSULTACOMPLEJAEDITAR_Click(object sender, EventArgs e)
         {
             if ((cboOperadorLogicoEDITAR.Text == "") || (cboCampoConsultaComplejaEDITAR.Text == "") || (txtvalorConsultaComplejaEDITAR.Text == ""))
@@ -674,6 +718,7 @@ namespace CapaVista
 
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnAgregarAgruparOrdenarEDITAR_Click(object sender, EventArgs e)
         {
             if (rdbdescEDITAR.Checked == true)
@@ -705,6 +750,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cboAgruparEDITAR_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboAgruparEDITAR.SelectedIndex == 1)
@@ -719,6 +765,7 @@ namespace CapaVista
             }
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btneditar_Click(object sender, EventArgs e)
         {
             finaleditar = csimpleeditar + " " + whereeditar + " " + andeditar + " " + groupeditar + ";";
@@ -746,6 +793,7 @@ namespace CapaVista
         
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnCancelarCONSULTASIMPLE_Click(object sender, EventArgs e)
         {
             csimpleeditar ="";
@@ -763,6 +811,7 @@ namespace CapaVista
             groupeditar = "";
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void txtcancelarComparacionEDITAR_Click(object sender, EventArgs e)
         {
             cboTipoComparadorEDITAR.Text = "";
@@ -773,6 +822,7 @@ namespace CapaVista
             andeditar = "";
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnCancelarCONSULTACOMPLEJAEDITAR_Click(object sender, EventArgs e)
         {
             cboOperadorLogicoEDITAR.Text = "";
@@ -782,6 +832,7 @@ namespace CapaVista
             txtCadenaGeneradaEDITAR.Text = csimpleeditar + whereeditar + groupeditar;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnCancelarAgruparOrdenarEDITAR_Click(object sender, EventArgs e)
         {
             groupBox13.Enabled = false;
@@ -793,6 +844,7 @@ namespace CapaVista
             txtCadenaGeneradaEDITAR.Text = csimpleeditar + whereeditar + andeditar;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void btnborrareditar_Click(object sender, EventArgs e)
         {
             campoeditar = "";
@@ -825,6 +877,7 @@ namespace CapaVista
             chkcondicioneseditar.Checked = false;
         }
 
+        //Adolfo Monterroso 0901-18-50
         private void cbotablas_SelectedIndexChanged(object sender, EventArgs e)
         {
             valortabla.Text = cbotablas.SelectedItem.ToString();

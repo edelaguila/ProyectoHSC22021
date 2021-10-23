@@ -1,7 +1,7 @@
 ﻿
 namespace CapaVistaSeguridadHSC
 {
-    partial class frmAplicacionAPerfiles
+    partial class PendienteDeRevision
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CapaVistaSeguridadHSC
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAplicacionAPerfiles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PendienteDeRevision));
             this.dtgConsulta = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();

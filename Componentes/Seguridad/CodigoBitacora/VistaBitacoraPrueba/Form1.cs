@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VistaReporteador
+namespace VistaBitacoraPrueba
 {
-    public partial class frmEliminar : Form
+    public partial class Form1 : Form
     {
-        public frmEliminar()
+        public Form1()
         {
             InitializeComponent();
         }

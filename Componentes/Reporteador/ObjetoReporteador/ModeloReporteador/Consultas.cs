@@ -12,6 +12,7 @@ namespace ModeloReporteador
     public class Consultas
     {
         clsConexion cn = new clsConexion();
+        //Carol Monterroso 0901-17-5961
         public void Guardar(string cadena)
         {
             try
@@ -26,9 +27,8 @@ namespace ModeloReporteador
             }
         }
 
-
-        //Funcion para obtener el IdModulo
-        public OdbcDataReader IdMod(string cadena)
+        //Angel Chacón 9959-18-5201       
+        public OdbcDataReader IdMod(string cadena)//conexion para obtener el IdModulo para el combobox 
         {
             try
             {
@@ -43,8 +43,8 @@ namespace ModeloReporteador
             }
         }
 
-        //Funcion para obtener el nombre del modulo en combobox
-        public OdbcDataReader llenarcbxmodulo(string sql)
+        //Angel Chacón 9959-18-5201        
+        public OdbcDataReader llenarcbxmodulo(string sql)//conexion para obtener el nombre del modulo en combobox para el combobox
         {
             try
             {
@@ -59,8 +59,8 @@ namespace ModeloReporteador
             }
         }
 
-        //Funcion para obtener el IdModulo
-        public OdbcDataReader IdAplic(string cadena)
+        //Angel Chacón 9959-18-5201        
+        public OdbcDataReader IdAplic(string cadena)//conexion para obtener el IdAplicacion para el Combobox
         {
             try
             {
@@ -75,8 +75,8 @@ namespace ModeloReporteador
             }
         }
 
-        //Funcion para obtener el nombre de la aplicacion en combobox
-        public OdbcDataReader llenarcbxAplicacion(string sql)
+        //Funcion para obtener el IdModulo        
+        public OdbcDataReader llenarcbxAplicacion(string sql)//conexion para obtener el nombre de la aplicacion en combobox
         {
             try
             {
@@ -91,7 +91,8 @@ namespace ModeloReporteador
             }
         }
 
-        public OdbcDataAdapter llenarTbl(string tabla)// metodo  que obtinene el contenio de una tabla
+        //Francisco 0901-17-16694 
+        public OdbcDataAdapter llenarTbl(string tabla)// metodo  que obtinene el contenio de una tabla en la BD
         {
             //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
             string sql = "SELECT * FROM " + tabla + " ;";
@@ -108,7 +109,7 @@ namespace ModeloReporteador
         }
 
         clsConexion con = new clsConexion();
-                
+        // Luis Reyes 0901-15-3121
         public void dataGrid(string datos, string cadena)
         {            
             OdbcDataAdapter consulta = new OdbcDataAdapter(cadena, cn.conexion());

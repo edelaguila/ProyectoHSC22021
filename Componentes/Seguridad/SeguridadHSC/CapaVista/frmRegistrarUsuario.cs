@@ -3,7 +3,7 @@ using CapaControladorSeguridadHSC;
 using System;
 using System.Windows.Forms;
 using static datosUsuario;
-
+//Forma Creada por Jorge González 0901-18-3920
 namespace CapaVistaSeguridadHSC
 {
     public partial class frmRegistrarUsuario : Form
@@ -13,7 +13,7 @@ namespace CapaVistaSeguridadHSC
             InitializeComponent();
             CenterToScreen();
         }
-
+        //Jorge González 0901-18-3920
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
             Controlador s = new Controlador();

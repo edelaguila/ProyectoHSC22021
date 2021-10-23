@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace ModeloReporteador
 {
+    // Luis Reyes 0901-15-3121
     public class clsConexion
     {
         public OdbcConnection conexion()
         {
             //creacion de la conexion via ODBC
-            OdbcConnection conn = new OdbcConnection("Dsn=Proyecto");
+            OdbcConnection conn = new OdbcConnection("Dsn=conexionHSC");
             try
             {
                 conn.Open();
