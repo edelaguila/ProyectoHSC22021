@@ -7,8 +7,8 @@
     <ProjectGuid>{C402C02C-9A0D-490D-8A75-378A1747B3F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controlador</RootNamespace>
-    <AssemblyName>Controlador</AssemblyName>
+    <RootNamespace>ControladorContabilidad</RootNamespace>
+    <AssemblyName>ControladorContabilidad</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Modelo">
-      <HintPath>..\Modelo\bin\Debug\Modelo.dll</HintPath>
+    <Reference Include="ModeloContabilidad">
+      <HintPath>..\Modelo\bin\Debug\ModeloContabilidad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -7,8 +7,8 @@
     <ProjectGuid>{FE123034-6E87-4DD1-BF0F-7B95F2179053}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modelo</RootNamespace>
-    <AssemblyName>Modelo</AssemblyName>
+    <RootNamespace>ModeloContabilidad</RootNamespace>
+    <AssemblyName>ModeloContabilidad</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

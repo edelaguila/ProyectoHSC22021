@@ -34,8 +34,10 @@ namespace Vista
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasInteligentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasInteligentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasInteligentesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menúConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +46,9 @@ namespace Vista
             this.activosFijosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadosFinancierosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreContableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +73,7 @@ namespace Vista
             this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ayudaGeneralToolStripMenuItem,
             this.herramientasToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.inicioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
@@ -83,23 +89,42 @@ namespace Vista
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteadorToolStripMenuItem,
             this.consultasInteligentesToolStripMenuItem,
-            this.reporteadorToolStripMenuItem});
+            this.seguridadToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
-            // 
-            // consultasInteligentesToolStripMenuItem
-            // 
-            this.consultasInteligentesToolStripMenuItem.Name = "consultasInteligentesToolStripMenuItem";
-            this.consultasInteligentesToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.consultasInteligentesToolStripMenuItem.Text = "Consultas Inteligentes";
             // 
             // reporteadorToolStripMenuItem
             // 
             this.reporteadorToolStripMenuItem.Name = "reporteadorToolStripMenuItem";
             this.reporteadorToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.reporteadorToolStripMenuItem.Text = "Reporteador";
+            this.reporteadorToolStripMenuItem.Click += new System.EventHandler(this.reporteadorToolStripMenuItem_Click);
+            // 
+            // consultasInteligentesToolStripMenuItem
+            // 
+            this.consultasInteligentesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultasInteligentesToolStripMenuItem1,
+            this.menúConsultasToolStripMenuItem});
+            this.consultasInteligentesToolStripMenuItem.Name = "consultasInteligentesToolStripMenuItem";
+            this.consultasInteligentesToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.consultasInteligentesToolStripMenuItem.Text = "Consultas Inteligentes";
+            // 
+            // consultasInteligentesToolStripMenuItem1
+            // 
+            this.consultasInteligentesToolStripMenuItem1.Name = "consultasInteligentesToolStripMenuItem1";
+            this.consultasInteligentesToolStripMenuItem1.Size = new System.Drawing.Size(236, 26);
+            this.consultasInteligentesToolStripMenuItem1.Text = "Consultas Inteligentes";
+            this.consultasInteligentesToolStripMenuItem1.Click += new System.EventHandler(this.consultasInteligentesToolStripMenuItem1_Click);
+            // 
+            // menúConsultasToolStripMenuItem
+            // 
+            this.menúConsultasToolStripMenuItem.Name = "menúConsultasToolStripMenuItem";
+            this.menúConsultasToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.menúConsultasToolStripMenuItem.Text = "Menú Consultas";
+            this.menúConsultasToolStripMenuItem.Click += new System.EventHandler(this.menúConsultasToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -153,17 +178,40 @@ namespace Vista
             this.cierreContableToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.cierreContableToolStripMenuItem.Text = "Cierre Contable";
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(709, 5);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtUsuario.TabIndex = 3;
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // seguridadToolStripMenuItem
+            // 
+            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
+            // 
             // frmContabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmContabilidad";
             this.Text = "7001 Contabilidad";
+            this.Load += new System.EventHandler(this.frmContabilidad_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -177,7 +225,6 @@ namespace Vista
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaGeneralToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultasInteligentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem polizasToolStripMenuItem;
@@ -188,5 +235,11 @@ namespace Vista
         private System.Windows.Forms.ToolStripMenuItem estadosFinancierosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cierreContableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultasInteligentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasInteligentesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menúConsultasToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
     }
 }
