@@ -38,6 +38,8 @@ namespace Vista
             this.consultasInteligentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasInteligentesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menúConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,6 @@ namespace Vista
             this.estadosFinancierosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreContableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@ namespace Vista
             this.cierreContableToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1902, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,7 +83,7 @@ namespace Vista
             // ayudaGeneralToolStripMenuItem
             // 
             this.ayudaGeneralToolStripMenuItem.Name = "ayudaGeneralToolStripMenuItem";
-            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.ayudaGeneralToolStripMenuItem.Text = "Ayuda General";
             // 
             // herramientasToolStripMenuItem
@@ -93,7 +93,7 @@ namespace Vista
             this.consultasInteligentesToolStripMenuItem,
             this.seguridadToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // reporteadorToolStripMenuItem
@@ -126,10 +126,24 @@ namespace Vista
             this.menúConsultasToolStripMenuItem.Text = "Menú Consultas";
             this.menúConsultasToolStripMenuItem.Click += new System.EventHandler(this.menúConsultasToolStripMenuItem_Click);
             // 
+            // seguridadToolStripMenuItem
+            // 
+            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -185,30 +199,18 @@ namespace Vista
             this.txtUsuario.Size = new System.Drawing.Size(100, 22);
             this.txtUsuario.TabIndex = 3;
             // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
-            // 
-            // seguridadToolStripMenuItem
-            // 
-            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.seguridadToolStripMenuItem.Text = "Seguridad";
-            this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
-            // 
             // frmContabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "frmContabilidad";
             this.Text = "7001 Contabilidad";
             this.Load += new System.EventHandler(this.frmContabilidad_Load);

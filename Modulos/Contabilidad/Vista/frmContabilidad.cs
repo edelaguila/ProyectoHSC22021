@@ -59,10 +59,12 @@ namespace Vista
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLoginHSC form = new frmLoginHSC();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 txtUsuario.Text = form.usuario();
+                this.Show();
             }
             else
             { this.Close(); }
