@@ -14,7 +14,7 @@ namespace Modelo
         public OdbcConnection conexion()//Hecho por Wilber Enrique Segura Ramirez 0901-18-13952
         {
             //creacion de la conexion via ODBC
-            OdbcConnection conn = new OdbcConnection("Dsn=NombreDSN");
+            OdbcConnection conn = new OdbcConnection("Dsn=conexionHSC");
             try
             {
                 conn.Open();

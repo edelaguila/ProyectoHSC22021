@@ -83,8 +83,9 @@ namespace Vista
             // ayudaGeneralToolStripMenuItem
             // 
             this.ayudaGeneralToolStripMenuItem.Name = "ayudaGeneralToolStripMenuItem";
-            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ayudaGeneralToolStripMenuItem.Text = "Ayuda General";
+            this.ayudaGeneralToolStripMenuItem.Click += new System.EventHandler(this.ayudaGeneralToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -93,7 +94,7 @@ namespace Vista
             this.consultasInteligentesToolStripMenuItem,
             this.seguridadToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // reporteadorToolStripMenuItem
@@ -136,14 +137,14 @@ namespace Vista
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 

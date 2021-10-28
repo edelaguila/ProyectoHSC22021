@@ -75,5 +75,10 @@ namespace Vista
             CapaVistaSeguridadHSC.frmMIDSeguridad formulario = new CapaVistaSeguridadHSC.frmMIDSeguridad();
             formulario.Show();
         }
+
+        private void ayudaGeneralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
