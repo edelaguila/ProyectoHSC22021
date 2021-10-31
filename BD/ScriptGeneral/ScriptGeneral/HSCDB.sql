@@ -2,7 +2,7 @@
 # LDD Database hotelSanCarlos
 -- --------------------------
 
--- DROP DATABASE hotelSanCarlos;
+ DROP DATABASE hotelSanCarlos;
 CREATE DATABASE hotelSanCarlos;
 USE hotelSanCarlos;
 
@@ -352,3 +352,47 @@ create table impuesto(
     estado varchar(1), -- A activo, I inactivo
     primary key(idImpuesto) -- primaria del impuesto
 )ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+-- Tablas generales de el area de compras y cuentas por pagar
+create table bodega(
+idBodega VARCHAR(15),
+nombre varchar (100),
+descripcion varchar(100),
+PRIMARY KEY (idBodega)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE marca (
+  idMarca varchar(15),
+  nombre varchar(100) not NULL,
+  descripcion varchar(500) not NULL,
+  primary key (idMarca)
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE linea (
+  idLinea varchar(15),
+  nombre varchar(100) not NULL,
+  descripcion varchar(500) not NULL,
+  idMarca varchar(15) not null,
+  primary key (idLinea),
+  foreign key (idMarca) references marca (idMarca)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+create table producto(
+idProducto VARCHAR(15),
+nombre varchar(50) not null,
+descripcion varchar(100),
+idLinea varchar(15) not null,
+primary key (idProducto),
+foreign key (idLinea) references linea (idLinea)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+create table inventario(
+idInventario varchar(15),
+idBodega  varchar(15) not null,
+idproducto varchar(15) not null,
+cantidad int not null,
+descripcion varchar(100),
+PRIMARY KEY (idInventario),
+foreign key (idBodega) references bodega (idBodega),
+foreign key (idProducto) references producto (idProducto)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
