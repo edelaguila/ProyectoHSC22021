@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MantenimientosContaJNLD;
+using CapaVistaSeguridadHSC;
 
 namespace EjecutablePruebaCrudConta
 {
@@ -48,6 +49,43 @@ namespace EjecutablePruebaCrudConta
             frm4.MdiParent = this;
             frm4.Show();
             frm4.funActualizarUsuario(txtUsuario.Text);
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cerraSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLoginHSC form = new frmLoginHSC();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                txtUsuario.Text = form.usuario();
+                this.Show();
+            }
+            else
+            { this.Close(); }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            frmLoginHSC form = new frmLoginHSC();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                txtUsuario.Text = form.usuario();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void jaimeNoelLópezDaniel090118735ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("MDI Creado para efecto de prueba de los mantenimientos de Contabilidad, de forma independiente del MDI de módulo\n06/11/2021-0901-18-735-09:00PM");
         }
     }
 }

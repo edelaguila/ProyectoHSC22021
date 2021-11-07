@@ -105,5 +105,10 @@ namespace MantenimientosContaJNLD
         {
             navegador1.funTextboxComboVista(cmbCuentaPadre, txtCuentaPadre);
         }
+
+        private void txtIdCuenta_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

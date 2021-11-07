@@ -96,6 +96,7 @@ namespace MantenimientosContaJNLD
             this.txtEstado.Size = new System.Drawing.Size(18, 20);
             this.txtEstado.TabIndex = 5;
             this.txtEstado.Tag = "estado";
+            this.txtEstado.Visible = false;
             this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // label1

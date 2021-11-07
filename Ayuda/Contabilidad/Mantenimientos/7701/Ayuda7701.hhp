@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Ayuda7701.chm
+Contents file=Ayuda7701.hhc
+Default Window=Ayuda Mantenimiento Cuentas
+Default topic=7701-Mantenimiento-Cuenta.html
+Display compile progress=No
+Language=0x100a Español (Guatemala)
+
+[WINDOWS]
+Ayuda Mantenimiento Cuentas="7701 - Mantenimiento Cuentas","Ayuda7701.hhc",,"7701-Mantenimiento-Cuenta.html","7701-Mantenimiento-Cuenta.html","7701-Mantenimiento-Cuenta.html","Ayuda7701","7701-Mantenimiento-Cuenta.html","Ayuda7701",0x23520,,0xc387e,,,,,,,,0
+
+
+[FILES]
+7701-Mantenimiento-Cuenta.html
+
+[INFOTYPES]
+

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaVistaSeguridadHSC">
+      <HintPath>..\..\..\..\..\..\Componentes\Seguridad\SeguridadHSC\CapaVista\bin\Debug\CapaVistaSeguridadHSC.dll</HintPath>
+    </Reference>
     <Reference Include="MantenimientosContaJNLD">
       <HintPath>..\..\..\MantenimientosContaJNLD\MantenimientosContaJNLD\bin\Debug\MantenimientosContaJNLD.dll</HintPath>
     </Reference>

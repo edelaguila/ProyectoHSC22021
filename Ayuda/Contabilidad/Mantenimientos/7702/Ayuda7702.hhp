@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Ayuda7702.chm
+Contents file=Ayuda7702.hhc
+Default Window=Ayuda Mantenimiento Tipo Cuenta
+Default topic=7702-Mantenimiento-Tipo-Cuenta.html
+Display compile progress=No
+Language=0x100a Español (Guatemala)
+
+[WINDOWS]
+Ayuda Mantenimiento Tipo Cuenta="Ayuda 7702","Ayuda7702.hhc",,"7702-Mantenimiento-Tipo-Cuenta.html","7702-Mantenimiento-Tipo-Cuenta.html","7702-Mantenimiento-Tipo-Cuenta.html",,"7702-Mantenimiento-Tipo-Cuenta.html",,0x2120,,0xc387e,,,,,,,,0
+
+
+[FILES]
+7702-Mantenimiento-Tipo-Cuenta.html
+
+[INFOTYPES]
+

@@ -49,9 +49,9 @@ namespace MantenimientosContaJNLD
             this.cmbCuentaPadre = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.rdbActivo = new System.Windows.Forms.RadioButton();
             this.rdbInactivo = new System.Windows.Forms.RadioButton();
+            this.rdbActivo = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCuentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,7 @@ namespace MantenimientosContaJNLD
             this.txtIdCuenta.Size = new System.Drawing.Size(100, 20);
             this.txtIdCuenta.TabIndex = 2;
             this.txtIdCuenta.Tag = "idCuenta";
+            this.txtIdCuenta.TextChanged += new System.EventHandler(this.txtIdCuenta_TextChanged);
             // 
             // txtNombre
             // 
@@ -98,6 +99,7 @@ namespace MantenimientosContaJNLD
             this.txtTipoCuenta.Size = new System.Drawing.Size(28, 20);
             this.txtTipoCuenta.TabIndex = 4;
             this.txtTipoCuenta.Tag = "idTipoCuenta";
+            this.txtTipoCuenta.Visible = false;
             this.txtTipoCuenta.TextChanged += new System.EventHandler(this.txtTipoCuenta_TextChanged);
             // 
             // txtCargo
@@ -131,6 +133,7 @@ namespace MantenimientosContaJNLD
             this.txtCuentaPadre.Size = new System.Drawing.Size(27, 20);
             this.txtCuentaPadre.TabIndex = 8;
             this.txtCuentaPadre.Tag = "idCuentaPadre";
+            this.txtCuentaPadre.Visible = false;
             this.txtCuentaPadre.TextChanged += new System.EventHandler(this.txtCuentaPadre_TextChanged);
             // 
             // txtEstado
@@ -140,6 +143,7 @@ namespace MantenimientosContaJNLD
             this.txtEstado.Size = new System.Drawing.Size(27, 20);
             this.txtEstado.TabIndex = 9;
             this.txtEstado.Tag = "estado";
+            this.txtEstado.Visible = false;
             this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // label1
@@ -233,14 +237,17 @@ namespace MantenimientosContaJNLD
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
-            // label8
+            // rdbInactivo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 441);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Estado";
+            this.rdbInactivo.AutoSize = true;
+            this.rdbInactivo.Location = new System.Drawing.Point(29, 57);
+            this.rdbInactivo.Name = "rdbInactivo";
+            this.rdbInactivo.Size = new System.Drawing.Size(63, 17);
+            this.rdbInactivo.TabIndex = 1;
+            this.rdbInactivo.TabStop = true;
+            this.rdbInactivo.Text = "Inactivo";
+            this.rdbInactivo.UseVisualStyleBackColor = true;
+            this.rdbInactivo.CheckedChanged += new System.EventHandler(this.rdbInactivo_CheckedChanged);
             // 
             // rdbActivo
             // 
@@ -254,17 +261,14 @@ namespace MantenimientosContaJNLD
             this.rdbActivo.UseVisualStyleBackColor = true;
             this.rdbActivo.CheckedChanged += new System.EventHandler(this.rdbActivo_CheckedChanged);
             // 
-            // rdbInactivo
+            // label8
             // 
-            this.rdbInactivo.AutoSize = true;
-            this.rdbInactivo.Location = new System.Drawing.Point(29, 57);
-            this.rdbInactivo.Name = "rdbInactivo";
-            this.rdbInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rdbInactivo.TabIndex = 1;
-            this.rdbInactivo.TabStop = true;
-            this.rdbInactivo.Text = "Inactivo";
-            this.rdbInactivo.UseVisualStyleBackColor = true;
-            this.rdbInactivo.CheckedChanged += new System.EventHandler(this.rdbInactivo_CheckedChanged);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(49, 441);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Estado";
             // 
             // mantenimientoCuentas
             // 

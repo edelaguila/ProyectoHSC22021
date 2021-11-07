@@ -35,10 +35,10 @@ namespace MantenimientosContaJNLD
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbInactivo = new System.Windows.Forms.RadioButton();
+            this.rdbActivo = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rdbActivo = new System.Windows.Forms.RadioButton();
-            this.rdbInactivo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperacion)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,7 @@ namespace MantenimientosContaJNLD
             this.txtEstado.Size = new System.Drawing.Size(19, 20);
             this.txtEstado.TabIndex = 4;
             this.txtEstado.Tag = "estado";
+            this.txtEstado.Visible = false;
             this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // groupBox1
@@ -97,6 +98,30 @@ namespace MantenimientosContaJNLD
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado";
+            // 
+            // rdbInactivo
+            // 
+            this.rdbInactivo.AutoSize = true;
+            this.rdbInactivo.Location = new System.Drawing.Point(52, 66);
+            this.rdbInactivo.Name = "rdbInactivo";
+            this.rdbInactivo.Size = new System.Drawing.Size(63, 17);
+            this.rdbInactivo.TabIndex = 1;
+            this.rdbInactivo.TabStop = true;
+            this.rdbInactivo.Text = "Inactivo";
+            this.rdbInactivo.UseVisualStyleBackColor = true;
+            this.rdbInactivo.CheckedChanged += new System.EventHandler(this.rdbInactivo_CheckedChanged);
+            // 
+            // rdbActivo
+            // 
+            this.rdbActivo.AutoSize = true;
+            this.rdbActivo.Location = new System.Drawing.Point(52, 43);
+            this.rdbActivo.Name = "rdbActivo";
+            this.rdbActivo.Size = new System.Drawing.Size(55, 17);
+            this.rdbActivo.TabIndex = 0;
+            this.rdbActivo.TabStop = true;
+            this.rdbActivo.Text = "Activo";
+            this.rdbActivo.UseVisualStyleBackColor = true;
+            this.rdbActivo.CheckedChanged += new System.EventHandler(this.rdbActivo_CheckedChanged);
             // 
             // label1
             // 
@@ -115,30 +140,6 @@ namespace MantenimientosContaJNLD
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Nombre";
-            // 
-            // rdbActivo
-            // 
-            this.rdbActivo.AutoSize = true;
-            this.rdbActivo.Location = new System.Drawing.Point(52, 43);
-            this.rdbActivo.Name = "rdbActivo";
-            this.rdbActivo.Size = new System.Drawing.Size(55, 17);
-            this.rdbActivo.TabIndex = 0;
-            this.rdbActivo.TabStop = true;
-            this.rdbActivo.Text = "Activo";
-            this.rdbActivo.UseVisualStyleBackColor = true;
-            this.rdbActivo.CheckedChanged += new System.EventHandler(this.rdbActivo_CheckedChanged);
-            // 
-            // rdbInactivo
-            // 
-            this.rdbInactivo.AutoSize = true;
-            this.rdbInactivo.Location = new System.Drawing.Point(52, 66);
-            this.rdbInactivo.Name = "rdbInactivo";
-            this.rdbInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rdbInactivo.TabIndex = 1;
-            this.rdbInactivo.TabStop = true;
-            this.rdbInactivo.Text = "Inactivo";
-            this.rdbInactivo.UseVisualStyleBackColor = true;
-            this.rdbInactivo.CheckedChanged += new System.EventHandler(this.rdbInactivo_CheckedChanged);
             // 
             // mantenimientoTipoOperacion
             // 
