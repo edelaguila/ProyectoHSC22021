@@ -29,6 +29,7 @@ insert into empleado values("1","María","Hernandez","1999-09-25","4000.00","cma
 #usuario: admin
 #contraseña: 12345
 INSERT INTO usuario(pkId,fkIdEmpleado, nombre, contraseña,estado,intento) VALUES ("1", "1", "admin","LKAekHU9EtweB49HAaTRfg==","1","0");
+INSERT INTO usuario(pkId,fkIdEmpleado, nombre, contraseña,estado,intento) VALUES ("2", "1", "ashly","LKAekHU9EtweB49HAaTRfg==","1","0");
 
 -- Inserts con relacion a seguridad
 insert into perfil values("1","Administrador","1");
@@ -52,3 +53,23 @@ INSERT INTO aplicacion VALUES ("0012","1","Mantenimiento Módulo",1,0012,0);
 /*Alter con ajuste de tamaño para el campo de ip en bitácora*/ 
 ALTER TABLE hotelsancarlos.bitacorausuario 
 CHANGE COLUMN ip ip VARCHAR(100) NULL DEFAULT NULL ;
+
+insert into usuarioaplicacion values("1","0001",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0002",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0003",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0004",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0005",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0006",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0007",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0008",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0009",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0010",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0011",1,1,1,1,1);
+insert into usuarioaplicacion values("1","0012",1,1,1,1,1);
+
+insert into usuarioaplicacion values("2","0001",1,1,1,1,1);
+insert into usuarioaplicacion values("2","0002",1,1,1,1,1);
+insert into usuarioaplicacion values("2","0003",1,1,1,1,1);
+insert into usuarioaplicacion values("2","0004",1,1,1,1,1);
+insert into usuarioaplicacion values("2","0005",1,1,1,1,1);
+insert into usuarioaplicacion values("2","0006",1,1,1,1,1);
