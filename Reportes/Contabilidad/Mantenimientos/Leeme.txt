@@ -1,0 +1,7 @@
+Los reportes se encuentran ubicados en el Google Drive Oficial
+
+Ruta de reportes de Mantenimientos de Contabilidad:
+
+Segundo Proyecto > Software > Reportes > Contabilidad > Mantenimientos 
+
+Dentro de la carpeta de Mantenimientos esta segmentado por carpetas según código de aplicación

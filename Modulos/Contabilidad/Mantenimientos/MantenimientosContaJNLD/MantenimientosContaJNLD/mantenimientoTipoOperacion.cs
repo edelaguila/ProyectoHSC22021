@@ -76,6 +76,7 @@ namespace MantenimientosContaJNLD
             navegador1.aplicacion = "Mantenimiento Tipo Operacion";//nombre de la app en seguridad
             navegador1.funActualizarPermisos();//actualizamos los permisos
             navegador1.idmodulo = "7";//7 es contabilidad
+            navegador1.funReportesVista("ruta", "idAplicacion", "Reporte");
         }
     }
 }
