@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="Bitacora, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CodigoBitacora\VistaBitacoraLogin\bin\Debug\Bitacora.dll</HintPath>
+      <HintPath>..\..\CodigoBitacora\BitacoraRegistrarLogin\bin\Debug\net472\Bitacora.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
     <Reference Include="CapaControladorSeguridadHSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -160,6 +160,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RecorrerAplicacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PendienteDeRevision.resx">
