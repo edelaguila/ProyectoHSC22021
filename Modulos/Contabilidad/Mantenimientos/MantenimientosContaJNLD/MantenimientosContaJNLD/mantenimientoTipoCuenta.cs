@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace MantenimientosContaJNLD
 {
-    public partial class mantenimientoCuentas : Form
+    public partial class mantenimientoTipoCuenta : Form
     {/*Jaime Noel López Daniel 0901-18-735*/
         private string usuario = "";//Variable para el nombre del usuario que viene desde el MDI
-        public mantenimientoCuentas()
+        public mantenimientoTipoCuenta()
         {
             InitializeComponent();
             //Parametrización navegador
             /*arreglo de textboxs*/
             TextBox[] alias = navegador1.funAsignandoTexts(this);
             //definicion de textboxs, tabla y BD
-            navegador1.funAsignarAliasVista(alias, "cuenta", "hotelSanCarlos");
+            navegador1.funAsignarAliasVista(alias, "tipocuenta", "hotelSanCarlos");
             navegador1.funAsignarSalidadVista(this);
 
             //definicion del campo de estado / para dar de bajars
@@ -41,34 +41,18 @@ namespace MantenimientosContaJNLD
             //-- fin de atributos no cambiantes
 
             //enviar el data grid view para la navegación
-            navegador1.pideGrid(this.dvgCuentas);
+            navegador1.pideGrid(this.dgvTipoCuenta);
             //llena el data grid
             navegador1.llenaTabla();
             //pide la referencia a la form para poder cerrarla
             navegador1.pedirRef(this);
-            //FALTA USUARIO Y ACTUALIZAR PERSMISOS
-
-            //Para las combo boxes
-            //Parametros: La combo box, la tabla, el id de la tabla, el valor a mostrar, y el campo de estado
-            navegador1.funLlenarComboControl(cmbTipoCuenta, "tipoCuenta", "idTipoCuenta", "nombre", "estado");
-            navegador1.funLlenarComboControl(cmbCuentaPadre, "cuenta", "idCuenta", "nombre", "estado");
+            
 
         }
-        //Actualización de permisos que se debe realizar después de tener la variable usuario ingresada
-        public void funActualizarUsuario(string user)
-        {
-            //colocamos el nombre del usuario
-            usuario = user;
-            //y ya con el nombre del usuario podemos actualizar los permisos
-            navegador1.usuario = user;
-            navegador1.aplicacion = "Mantenimiento Cuentas";//nombre de la app en seguridad
-            navegador1.funActualizarPermisos();//actualizamos los permisos
-            navegador1.idmodulo="7";//7 es contabilidad
-        }
 
-        private void dvgCuentas_SelectionChanged(object sender, EventArgs e)
+        private void dgvTipoCuenta_SelectionChanged(object sender, EventArgs e)
         {
-            navegador1.funSeleccionarDTVista(dvgCuentas);
+            navegador1.funSeleccionarDTVista(dgvTipoCuenta);
         }
 
         private void rdbActivo_CheckedChanged(object sender, EventArgs e)
@@ -81,29 +65,19 @@ namespace MantenimientosContaJNLD
             navegador1.funCambioEstatusRBVista(txtEstado, rdbInactivo, "I");
         }
 
-        private void cmbTipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            navegador1.funComboTextboxVista(cmbTipoCuenta, txtTipoCuenta);
-        }
-
-        private void cmbCuentaPadre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            navegador1.funComboTextboxVista(cmbCuentaPadre, txtCuentaPadre);
-        }
-
         private void txtEstado_TextChanged(object sender, EventArgs e)
         {
             navegador1.funSetearRBVista(rdbActivo, rdbInactivo, txtEstado);
         }
-
-        private void txtTipoCuenta_TextChanged(object sender, EventArgs e)
+        public void funActualizarUsuario(string user)
         {
-            navegador1.funTextboxComboVista(cmbTipoCuenta, txtTipoCuenta);
-        }
-
-        private void txtCuentaPadre_TextChanged(object sender, EventArgs e)
-        {
-            navegador1.funTextboxComboVista(cmbCuentaPadre, txtCuentaPadre);
+            //colocamos el nombre del usuario
+            usuario = user;
+            //y ya con el nombre del usuario podemos actualizar los permisos
+            navegador1.usuario = user;
+            navegador1.aplicacion = "Mantenimiento Tipo Cuenta";//nombre de la app en seguridad
+            navegador1.funActualizarPermisos();//actualizamos los permisos
+            navegador1.idmodulo = "7";//7 es contabilidad
         }
     }
 }
