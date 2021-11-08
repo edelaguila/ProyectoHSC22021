@@ -12,7 +12,7 @@ namespace Modelo
     public class Sentencias
     {
         //Hecho por Wilber Enrique Segura Ramirez 0901-18-13952
-        public OdbcDataAdapter llenarTabla(string tabla)//Método Genérico para llenar tabla
+       /* public OdbcDataAdapter llenarTabla(string tabla)//Método Genérico para llenar tabla
         {
             Conexion cn = new Conexion();//Variable para abrir conexión
             string sql = "select * from ";//Aquí ponemos la tabla 
@@ -21,6 +21,6 @@ namespace Modelo
             cn.desconexion(conn);//Cerramos conexión
 
             return dataTable;
-        }
+        }*/
     }
 }

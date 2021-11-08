@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaVistaSeguridadHSC;
+using CapaVistaReporte;
 
 namespace Vista
 {
@@ -27,9 +28,8 @@ namespace Vista
 
         private void reporteadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Reporteador no funciona debido a que el nombre de su capa vista es identico al de consultas inteligentes
-           // VistaReporteador.Reporteador formulario = new VistaReporteador.Reporteador(); 
-            //formulario.Show();
+           CapaVistaReporte.ReporteadorAdmin formulario = new CapaVistaReporte.ReporteadorAdmin(); 
+            formulario.Show();
         }
 
         private void consultasInteligentesToolStripMenuItem1_Click(object sender, EventArgs e)

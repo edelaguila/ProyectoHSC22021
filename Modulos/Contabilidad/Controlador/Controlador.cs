@@ -16,12 +16,12 @@ namespace Controlador
         Sentencias sn = new Sentencias();
 
         //Hecho por Wilber Enrique Segura Ramirez 0901-18-13952
-        public DataTable llenarTabla(string tabla)//Método Genérico para llenar datagrids
+        /*public DataTable llenarTabla(string tabla)//Método Genérico para llenar datagrids
         {
             OdbcDataAdapter dt = sn.llenarTabla(tabla);
             DataTable table = new DataTable();
             dt.Fill(table);
             return table;
-        }
+        }*/
     }
 }
