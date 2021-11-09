@@ -71,11 +71,23 @@
     <Compile Include="frmMantenimientoInventario.Designer.cs">
       <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoListaDePrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoListaDePrecios.designer.cs">
+      <DependentUpon>frmMantenimientoListaDePrecios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoMora.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMantenimientoMora.Designer.cs">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoMovimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoMovimientoInventario.designer.cs">
+      <DependentUpon>frmMantenimientoMovimientoInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMantenimientoTipoDocumento.cs">
       <SubType>Form</SubType>
@@ -117,8 +129,14 @@
     <EmbeddedResource Include="frmMantenimientoInventario.resx">
       <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoListaDePrecios.resx">
+      <DependentUpon>frmMantenimientoListaDePrecios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoMora.resx">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoMovimientoInventario.resx">
+      <DependentUpon>frmMantenimientoMovimientoInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTipoDocumento.resx">
       <DependentUpon>frmMantenimientoTipoDocumento.cs</DependentUpon>

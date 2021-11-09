@@ -89,5 +89,19 @@ namespace CapaVistaMVentasCC
             else
             { this.Close(); }
         }
+
+        private void movimientoDeInventariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoMovimientoInventario form3 = new frmMantenimientoMovimientoInventario();
+            form3.MdiParent = this;
+            form3.Show();
+        }
+
+        private void listaDePreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoListaDePrecios form3 = new frmMantenimientoListaDePrecios();
+            form3.MdiParent = this;
+            form3.Show();
+        }
     }
 }
