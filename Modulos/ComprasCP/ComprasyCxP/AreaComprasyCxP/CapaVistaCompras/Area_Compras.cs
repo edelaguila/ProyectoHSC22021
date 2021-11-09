@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CapaVistaSeguridadHSC;
 using CapaVista;
 using CapaVistaReporte;
-
+//Se actualizaron las referencias nuevamente
 namespace CapaVistaCompras
 {
     public partial class Area_Compras : Form
