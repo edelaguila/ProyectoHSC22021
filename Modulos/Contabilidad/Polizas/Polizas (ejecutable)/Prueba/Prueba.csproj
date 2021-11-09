@@ -44,9 +44,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VistaContabilidad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Modulos\Contabilidad\Vista\bin\Debug\VistaContabilidad.dll</HintPath>
+    <Reference Include="VistaContabilidad">
+      <HintPath>..\..\programa Polizas\Vista\bin\Debug\VistaContabilidad.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
