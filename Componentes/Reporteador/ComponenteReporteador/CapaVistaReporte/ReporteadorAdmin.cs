@@ -201,5 +201,10 @@ namespace CapaVistaReporte
             desactivarTextBox();
             dataGrid();
         }
+
+        private void openFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

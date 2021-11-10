@@ -63,11 +63,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheques.Designer.cs">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDisponibilidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDisponibilidad.Designer.cs">
       <DependentUpon>frmDisponibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNominaGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNominaGeneral.Designer.cs">
+      <DependentUpon>frmNominaGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSolicitudCuenta.cs">
       <SubType>Form</SubType>
@@ -101,8 +113,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCheques.resx">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDisponibilidad.resx">
       <DependentUpon>frmDisponibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNominaGeneral.resx">
+      <DependentUpon>frmNominaGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudCuenta.resx">
       <DependentUpon>frmSolicitudCuenta.cs</DependentUpon>

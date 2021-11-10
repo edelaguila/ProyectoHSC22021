@@ -31,33 +31,26 @@ namespace CapaVistaMBancos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDisponibilidad));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnEstadosCuentas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDisponibilidadBancaria = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 184);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 99);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 242);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 215);
             this.dataGridView1.TabIndex = 38;
-            // 
-            // btnEstadosCuentas
-            // 
-            this.btnEstadosCuentas.BackColor = System.Drawing.Color.Tan;
-            this.btnEstadosCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadosCuentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadosCuentas.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEstadosCuentas.Location = new System.Drawing.Point(482, 139);
-            this.btnEstadosCuentas.Name = "btnEstadosCuentas";
-            this.btnEstadosCuentas.Size = new System.Drawing.Size(195, 30);
-            this.btnEstadosCuentas.TabIndex = 37;
-            this.btnEstadosCuentas.Text = "Estados de Cuentas";
-            this.btnEstadosCuentas.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -70,29 +63,34 @@ namespace CapaVistaMBancos
             this.label1.TabIndex = 36;
             this.label1.Text = "Disponibilidad Bancaria";
             // 
-            // btnDisponibilidadBancaria
+            // txtTotal
             // 
-            this.btnDisponibilidadBancaria.BackColor = System.Drawing.Color.Tan;
-            this.btnDisponibilidadBancaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisponibilidadBancaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisponibilidadBancaria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDisponibilidadBancaria.Location = new System.Drawing.Point(77, 139);
-            this.btnDisponibilidadBancaria.Name = "btnDisponibilidadBancaria";
-            this.btnDisponibilidadBancaria.Size = new System.Drawing.Size(195, 30);
-            this.btnDisponibilidadBancaria.TabIndex = 35;
-            this.btnDisponibilidadBancaria.Text = "Disponibilidad Bancaria";
-            this.btnDisponibilidadBancaria.UseVisualStyleBackColor = false;
+            this.txtTotal.Location = new System.Drawing.Point(648, 320);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(140, 20);
+            this.txtTotal.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(588, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Total:";
             // 
             // frmDisponibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 352);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnEstadosCuentas);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDisponibilidadBancaria);
             this.Name = "frmDisponibilidad";
             this.Text = "6663 Disponibilidad";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -104,8 +102,8 @@ namespace CapaVistaMBancos
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnEstadosCuentas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDisponibilidadBancaria;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label2;
     }
 }

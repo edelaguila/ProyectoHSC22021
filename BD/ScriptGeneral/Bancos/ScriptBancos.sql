@@ -34,3 +34,16 @@ create table tipoCambio (
 
 	foreign key (fkidMoneda) references Moneda(Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE chequesprov(
+  NoCheque VARCHAR(15) NOT NULL,
+  TipoPago VARCHAR(45) NOT NULL, #Nominativo, a la orden, al portador
+  IdBanco VARCHAR(15) NOT NULL,
+  idProveedor VARCHAR(15) NOT NULL,
+  MontoTotal FLOAT NOT NULL,
+  FechaAplicacion date not null,
+  Estado VARCHAR(1) not null,
+  PRIMARY KEY (NoCheque),
+  FOREIGN KEY (IdBanco) REFERENCES banco (IdBanco),
+  FOREIGN KEY (idProveedor) REFERENCES proveedor (idProveedor)
+) ENGINE = InnoDB DEFAULT CHARACTER SET = latin1;
