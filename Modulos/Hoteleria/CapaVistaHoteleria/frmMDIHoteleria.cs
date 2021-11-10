@@ -11,8 +11,10 @@ using CapaVistaSeguridadHSC;
 using CapaVistaReporte;
 using CapaVista;
 
+
 namespace CapaVistaHoteleria
 {
+   
     public partial class frmMDIHoteleria : Form
     {
         public frmMDIHoteleria()
@@ -44,6 +46,8 @@ namespace CapaVistaHoteleria
             if (form.ShowDialog() == DialogResult.OK)
             {
                 txtUsuario.Text = form.usuario();
+                nombreUsuario.nombre = txtUsuario.Text;
+
             }
             else
             { 
@@ -67,6 +71,70 @@ namespace CapaVistaHoteleria
         {
             menuconsultas consultas = new menuconsultas();
             consultas.Show();
+        }
+
+        private void mantenimientoEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpresa form = new frmEmpresa();
+            form.MdiParent = this;
+            form.Show();
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmSucursal form = new frmSucursal();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoCliente form = new frmTipoCliente();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoTipoCamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoCama form = new frmTipoCama();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoTipoHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoHabitacion form = new frmTipoHabitacion();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHabitacion form = new frmHabitacion();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoTipoServicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoServicio form = new frmTipoServicio();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSalon form = new frmSalon();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mantenimientoMesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMesa form = new frmMesa();
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }
