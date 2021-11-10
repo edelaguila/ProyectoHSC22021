@@ -16,6 +16,7 @@ namespace CapaVistaMBancos
         public MDIBancos()
         {
             InitializeComponent();
+            desactivarTexBox();
         }
         // Luis Reyes 0901-15-3121
         private void MDIBancos_Load(object sender, EventArgs e)
@@ -69,7 +70,58 @@ namespace CapaVistaMBancos
 
         private void reporteadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CapaVistaReporte.ReporteadorAdmin frm = new CapaVistaReporte.ReporteadorAdmin();
+            string usu;
+            usu = Convert.ToString(txtUsuario.Text);
+            if(usu == "admin")
+            {
+                CapaVistaReporte.ReporteadorAdmin frm = new CapaVistaReporte.ReporteadorAdmin();
+                frm.Show();
+            }
+            else 
+            {
+                CapaVistaReporte.ReporteadorUsuario frm = new CapaVistaReporte.ReporteadorUsuario();
+                frm.Show();
+            }
+            
+        }
+
+        private void consultarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSolicitudCuenta frm = new frmSolicitudCuenta();
+            frm.Show();
+        }
+
+        private void transferenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTranferecia frm = new frmTranferecia();
+            frm.Show();
+        }
+
+        private void disponibilidadBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDisponibilidad frm = new frmDisponibilidad();
+            frm.Show();
+        }
+
+        private void divisaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipodeCambio frm = new frmTipodeCambio();
+            frm.Show();
+        }
+        public void desactivarTexBox()
+        {
+            txtUsuario.Enabled = false;
+        }
+
+        private void chequesGeneradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNominaGeneral frm = new frmNominaGeneral();
+            frm.Show();
+        }
+
+        private void chequesEmitidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheques frm = new frmCheques();
             frm.Show();
         }
     }

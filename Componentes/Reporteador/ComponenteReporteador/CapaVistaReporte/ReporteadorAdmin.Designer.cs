@@ -340,6 +340,7 @@ namespace CapaVistaReporte
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "Archivos RPT (*.rpt)|*.rpt";
             // 
             // ReporteadorAdmin
             // 
