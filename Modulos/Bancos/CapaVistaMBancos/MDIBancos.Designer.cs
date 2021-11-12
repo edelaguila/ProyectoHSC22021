@@ -152,12 +152,14 @@ namespace CapaVistaMBancos
             this.consultarCuentaToolStripMenuItem.Name = "consultarCuentaToolStripMenuItem";
             this.consultarCuentaToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.consultarCuentaToolStripMenuItem.Text = "Consultar Cuenta";
+            this.consultarCuentaToolStripMenuItem.Click += new System.EventHandler(this.consultarCuentaToolStripMenuItem_Click);
             // 
             // transferenciaToolStripMenuItem
             // 
             this.transferenciaToolStripMenuItem.Name = "transferenciaToolStripMenuItem";
             this.transferenciaToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.transferenciaToolStripMenuItem.Text = "Transferencia";
+            this.transferenciaToolStripMenuItem.Click += new System.EventHandler(this.transferenciaToolStripMenuItem_Click);
             // 
             // disponibilidadToolStripMenuItem
             // 
@@ -173,26 +175,29 @@ namespace CapaVistaMBancos
             this.disponibilidadBancariaToolStripMenuItem.Name = "disponibilidadBancariaToolStripMenuItem";
             this.disponibilidadBancariaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.disponibilidadBancariaToolStripMenuItem.Text = "Disponibilidad Bancaria";
+            this.disponibilidadBancariaToolStripMenuItem.Click += new System.EventHandler(this.disponibilidadBancariaToolStripMenuItem_Click);
             // 
             // divisaToolStripMenuItem
             // 
             this.divisaToolStripMenuItem.Name = "divisaToolStripMenuItem";
             this.divisaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.divisaToolStripMenuItem.Text = "Divisa";
+            this.divisaToolStripMenuItem.Click += new System.EventHandler(this.divisaToolStripMenuItem_Click);
             // 
             // nominasToolStripMenuItem
             // 
             this.nominasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chequesGeneradosToolStripMenuItem});
             this.nominasToolStripMenuItem.Name = "nominasToolStripMenuItem";
-            this.nominasToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.nominasToolStripMenuItem.Text = "Nominas";
+            this.nominasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.nominasToolStripMenuItem.Text = "Cheques";
             // 
             // chequesGeneradosToolStripMenuItem
             // 
             this.chequesGeneradosToolStripMenuItem.Name = "chequesGeneradosToolStripMenuItem";
-            this.chequesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.chequesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chequesGeneradosToolStripMenuItem.Text = "Cheques Generados";
+            this.chequesGeneradosToolStripMenuItem.Click += new System.EventHandler(this.chequesGeneradosToolStripMenuItem_Click);
             // 
             // movimientosRealizadosToolStripMenuItem
             // 
@@ -205,8 +210,9 @@ namespace CapaVistaMBancos
             // chequesEmitidosToolStripMenuItem
             // 
             this.chequesEmitidosToolStripMenuItem.Name = "chequesEmitidosToolStripMenuItem";
-            this.chequesEmitidosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.chequesEmitidosToolStripMenuItem.Text = "Cheques Emitidos";
+            this.chequesEmitidosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.chequesEmitidosToolStripMenuItem.Text = "Consulta de Cheques";
+            this.chequesEmitidosToolStripMenuItem.Click += new System.EventHandler(this.chequesEmitidosToolStripMenuItem_Click);
             // 
             // txtUsuario
             // 
